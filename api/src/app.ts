@@ -1,6 +1,6 @@
 import express, { Application } from 'express'
 import cookieParser from 'cookie-parser'
-import { itemsRouter, itemRouter } from './routes'
+import { itemsRouter, itemRouter } from '@routes'
 
 const app: Application = express()
 const port = process.env.PORT || 8000

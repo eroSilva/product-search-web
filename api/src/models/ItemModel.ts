@@ -17,14 +17,3 @@ export interface ItemDetailed extends Item {
   sold_qty: number
   description: string
 }
-
-export interface ItemsResponse {
-  query: string
-  categories: string[]
-  items: Item[]
-}
-
-export interface ItemResponse {
-  categories: string[]
-  item: ItemDetailed
-}

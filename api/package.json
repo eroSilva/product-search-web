@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "nodemon",
-    "start": "ts-node ./bin/www",
+    "start": "ts-node -r tsconfig-paths/register ./bin/www",
     "lint": "eslint ."
   },
   "dependencies": {
+    "axios": "^1.7.3",
     "cookie-parser": "^1.4.4",
     "debug": "^2.6.9",
     "express": "^4.16.1"
@@ -15,6 +16,7 @@
   "devDependencies": {
     "@types/cookie-parser": "^1.4.7",
     "nodemon": "^3.1.4",
-    "ts-node": "^10.9.2"
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0"
   }
 }
