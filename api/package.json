@@ -1,0 +1,20 @@
+{
+  "name": "product-search-web-api",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon",
+    "start": "ts-node ./bin/www",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.4",
+    "debug": "^2.6.9",
+    "express": "^4.16.1"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.7",
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2"
+  }
+}
