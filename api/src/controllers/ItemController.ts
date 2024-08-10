@@ -1,22 +1,52 @@
-import { Request, Response } from 'express'
 import { getData } from '@infrastructure/ApiService'
-import { ItemsResponse } from '@models'
+import { ItemsResponse, ItemResponse, SearchResponse } from '@models'
+
+const extractDecimals = (value: number): number => {
+  const patter = /\.(.*)/
+  const [, decimals] = String(value).match(patter) || []
+  const result = decimals?.padEnd(2, '0') || '0'
+
+  return parseInt(result)
+}
 
 export const getItems = async (
-  req: Request,
-  res: Response<ItemsResponse | string>,
-) => {
-  const query = req.query.search
-
-  if (!query) {
-    return res.status(400).send('Missing required query parameter: search')
-  }
-
+  query: string,
+): Promise<ItemsResponse | string> => {
   try {
-    const data = await getData<any>(`search?q=${query}`)
+    const { results } = await getData<SearchResponse>(
+      `/sites/MLB/search?q=${query}`,
+    )
 
-    res.json(data)
+    const categories = results?.map(({ category_id }) => category_id || '')
+    const items = results?.map(result => ({
+      id: result.id,
+      title: result.title,
+      price: {
+        currency: result.currency_id,
+        amount: Math.trunc(result?.price || 0),
+        decimals: extractDecimals(result?.price || 0),
+      },
+      picture_url: result.thumbnail,
+      condition: result.condition,
+      free_shipping: result.shipping?.free_shipping,
+    }))
+
+    return {
+      query,
+      categories: categories || [],
+      items: items || [],
+    }
   } catch {
-    res.status(500).send('Error fetching data from API')
+    return 'Error fetching data from API'
+  }
+}
+
+export const getItem = async (id: string) => {
+  try {
+    const data = await getData<SearchResponse>(`/items/${id}`)
+
+    return data
+  } catch {
+    return 'Error fetching data from API'
   }
 }

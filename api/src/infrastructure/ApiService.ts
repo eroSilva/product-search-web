@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const instance = axios.create({
-  baseURL: 'https://api.mercadolibre.com/sites/MLB',
+  baseURL: 'https://api.mercadolibre.com',
 })
 
 export const getData = async <T>(endpoint: string): Promise<T> => {
