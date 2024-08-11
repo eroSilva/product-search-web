@@ -1,5 +1,6 @@
 import express, { Request, Response, Application } from 'express'
 import { getItems, getItem } from '../services/itemServices'
+import { isCustomErrorInstance } from '../../infrastructure'
 
 const app: Application = express()
 
@@ -16,8 +17,11 @@ export const itemsRouter = app.get(
       const data = await getItems(String(query))
       res.json(data)
     } catch (error) {
-      const message = error instanceof Error ? error.message : ''
-      res.status(500).send(message)
+      if (isCustomErrorInstance(error)) {
+        return res.status(error?.status).send(error)
+      }
+
+      res.status(500).send('An unexpected error occurred')
     }
   },
 )
@@ -31,8 +35,11 @@ export const itemRouter = app.get(
       const data = await getItem(id)
       res.json(data)
     } catch (error) {
-      const message = error instanceof Error ? error.message : ''
-      res.status(500).send(message)
+      if (isCustomErrorInstance(error)) {
+        return res.status(error?.status).send(error)
+      }
+
+      res.status(500).send('An unexpected error occurred')
     }
   },
 )

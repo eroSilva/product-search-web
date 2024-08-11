@@ -1,4 +1,4 @@
-import { mockedInstance } from '../../../infrastructure'
+import { mockedInstance } from '../../../infrastructure/ApiServiceMockAdapter'
 import { getItems, getItem } from '../../../application/services/itemServices'
 import {
   itemsRepositoryFixture,
@@ -17,11 +17,15 @@ describe('application/services/itemServices', () => {
   })
 
   it('should return an error message when getItems request fail', async () => {
-    mockedInstance.onGet('/sites/MLB/search?q=SOME_QUERY').reply(500)
+    mockedInstance
+      .onGet('/sites/MLB/search?q=SOME_QUERY')
+      .reply(500, { content: 'lorem ipsum' })
 
-    await expect(getItems('SOME_QUERY')).rejects.toThrow(
-      'Error fetching in getItems',
-    )
+    await expect(getItems('SOME_QUERY')).rejects.toStrictEqual({
+      status: 500,
+      message: 'Error fetching in getItems',
+      payload: { content: 'lorem ipsum' },
+    })
   })
 
   it('should return correctly data when getItem called with a id', async () => {
@@ -31,10 +35,14 @@ describe('application/services/itemServices', () => {
   })
 
   it('should return an error message when getItem request fail', async () => {
-    mockedInstance.onGet('/items/SOME_ID').reply(500)
+    mockedInstance
+      .onGet('/items/SOME_ID')
+      .reply(500, { content: 'lorem ipsum' })
 
-    await expect(getItem('SOME_ID')).rejects.toThrow(
-      'Error fetching in getItem',
-    )
+    await expect(getItem('SOME_ID')).rejects.toStrictEqual({
+      status: 500,
+      message: 'Error fetching in getItem',
+      payload: { content: 'lorem ipsum' },
+    })
   })
 })

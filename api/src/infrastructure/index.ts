@@ -1,2 +1,2 @@
 export * from './ApiService'
-export * from './ApiServiceMockAdapter'
+export * from './errorInstances'
