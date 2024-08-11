@@ -4,16 +4,20 @@ export interface Price {
   decimals?: number
 }
 
-export interface Item {
+export interface ItemEntity {
   id?: string
   title?: string
+  category?: string
   price?: Price
   picture_url?: string
   condition?: string
   free_shipping?: boolean
-}
-
-export interface ItemDetailed extends Item {
   sold_qty?: number
   description?: string
+}
+
+export interface ItemsEntity {
+  query: string
+  categories: string[]
+  items: ItemEntity[]
 }

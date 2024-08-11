@@ -62,7 +62,7 @@ interface City {
   name?: string
 }
 
-export interface Result {
+export interface ItemRepository {
   id?: string
   site_id?: string
   title?: string
@@ -90,16 +90,11 @@ export interface Result {
   city?: City
   latitude?: string
   longitude?: string
+  descriptions?: string[]
 }
 
-export interface SearchResponse {
+export interface ItemsRepository {
   site_id?: string
   paging?: Paging
-  results?: Result[]
-}
-
-export interface SearchResponse {
-  site_id?: string
-  paging?: Paging
-  results?: Result[]
+  results?: ItemRepository[]
 }

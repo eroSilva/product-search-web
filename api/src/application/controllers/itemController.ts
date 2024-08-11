@@ -1,5 +1,5 @@
 import express, { Request, Response, Application } from 'express'
-import { getItems, getItem } from '@controllers/ItemController'
+import { getItems, getItem } from '@application/services/itemServices'
 
 const app: Application = express()
 
