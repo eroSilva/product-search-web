@@ -1,2 +1,2 @@
 export * from './itemEntity'
-export * from './itemEntityModel'
+export * from './itemEntity.model'

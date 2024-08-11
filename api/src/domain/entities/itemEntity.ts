@@ -1,9 +1,8 @@
 import {
   ItemsRepository,
   ItemRepository,
-  ItemEntity,
-  ItemsEntity,
-} from '@domain'
+} from '../repositories/itemRepository.model'
+import { ItemEntity, ItemsEntity } from './itemEntity.model'
 
 const extractDecimals = (value: number): number => {
   const patter = /\.(.*)/

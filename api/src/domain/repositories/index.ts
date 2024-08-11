@@ -1,1 +1,1 @@
-export * from './itemRepositoryModel'
+export * from './itemRepository.model'

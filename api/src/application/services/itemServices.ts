@@ -1,4 +1,4 @@
-import { getData } from '@infrastructure/ApiService'
+import { getData } from '../../infrastructure/ApiService'
 import {
   ItemsRepository,
   ItemRepository,
@@ -6,7 +6,7 @@ import {
   ItemEntity,
   createItems,
   createItem,
-} from '@domain'
+} from '../../domain'
 
 export const getItems = async (
   query: string,
