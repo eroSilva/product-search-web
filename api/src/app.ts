@@ -12,8 +12,6 @@ app.use(cookieParser())
 app.use('/api/', itemsRouter)
 app.use('/api/', itemRouter)
 
-app.listen(port, () => {
-  console.log(`API server started at http://localhost:${port}`)
-})
+app.listen(port)
 
 module.exports = app

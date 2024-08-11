@@ -8,22 +8,20 @@ import {
   createItem,
 } from '../../domain'
 
-export const getItems = async (
-  query: string,
-): Promise<ItemsEntity | string> => {
+export const getItems = async (query: string): Promise<ItemsEntity> => {
   try {
     const data = await getData<ItemsRepository>(`/sites/MLB/search?q=${query}`)
-    return createItems(query, data)
+    return createItems(data)
   } catch {
-    return 'Error fetching data from API'
+    throw new Error('Error fetching in getItems')
   }
 }
 
-export const getItem = async (id: string): Promise<ItemEntity | string> => {
+export const getItem = async (id: string): Promise<ItemEntity> => {
   try {
     const data = await getData<ItemRepository>(`/items/${id}`)
     return createItem(data)
   } catch {
-    return 'Error fetching data from API'
+    throw new Error('Error fetching in getItem')
   }
 }

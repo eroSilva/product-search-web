@@ -3,42 +3,32 @@ import {
   ItemRepository,
 } from '../repositories/itemRepository.model'
 import { ItemEntity, ItemsEntity } from './itemEntity.model'
-
-const extractDecimals = (value: number): number => {
-  const patter = /\.(.*)/
-  const [, decimals] = String(value).match(patter) || []
-  const result = decimals?.padEnd(2, '0') || '0'
-
-  return parseInt(result)
-}
+import { extractDecimalDigits } from '../../utils'
 
 export const createItem = (itemsRepository: ItemRepository): ItemEntity => {
   return {
-    id: itemsRepository.id,
-    title: itemsRepository.title,
-    category: itemsRepository.category_id,
-    description: itemsRepository.descriptions?.join(' '),
+    id: itemsRepository.id || null,
+    title: itemsRepository.title || null,
+    category: itemsRepository.category_id || null,
+    description: itemsRepository.descriptions?.join(' ') || null,
     price: {
-      currency: itemsRepository.currency_id,
-      amount: Math.trunc(itemsRepository?.price || 0),
-      decimals: extractDecimals(itemsRepository?.price || 0),
+      currency: itemsRepository.currency_id || null,
+      amount: Math.trunc(itemsRepository?.price || 0) || null,
+      decimals: extractDecimalDigits(itemsRepository?.price || 0) || null,
     },
-    picture_url: itemsRepository.thumbnail,
-    condition: itemsRepository.condition,
-    free_shipping: itemsRepository.shipping?.free_shipping,
+    picture_url: itemsRepository.thumbnail || null,
+    condition: itemsRepository.condition || null,
+    free_shipping: itemsRepository.shipping?.free_shipping || null,
   }
 }
 
-export const createItems = (
-  query: string,
-  itemsRepository: ItemsRepository,
-): ItemsEntity => {
-  const { results } = itemsRepository
+export const createItems = (itemsRepository: ItemsRepository): ItemsEntity => {
+  const { results, query } = itemsRepository
   const categories = results?.map(({ category_id }) => category_id || '')
   const items = results?.map(createItem)
 
   return {
-    query,
+    query: query || '',
     categories: categories || [],
     items: items || [],
   }

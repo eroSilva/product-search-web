@@ -12,15 +12,12 @@ export const itemsRouter = app.get(
       return res.status(400).send('Missing required query parameter: search')
     }
 
-    if (typeof query !== 'string') {
-      return res.status(400).send('Invalid value in query parameter: search')
-    }
-
     try {
-      const data = await getItems(query)
+      const data = await getItems(String(query))
       res.json(data)
-    } catch (messages) {
-      res.status(500).send(messages as string)
+    } catch (error) {
+      const message = error instanceof Error ? error.message : ''
+      res.status(500).send(message)
     }
   },
 )
@@ -30,15 +27,12 @@ export const itemRouter = app.get(
   async (req: Request, res: Response) => {
     const id = req.params.id
 
-    if (!id) {
-      return res.status(400).send('Missing required param: id')
-    }
-
     try {
       const data = await getItem(id)
       res.json(data)
-    } catch (messages) {
-      res.status(500).send(messages as string)
+    } catch (error) {
+      const message = error instanceof Error ? error.message : ''
+      res.status(500).send(message)
     }
   },
 )

@@ -1,19 +1,19 @@
 export interface Price {
-  currency?: string
-  amount?: number
-  decimals?: number
+  currency?: string | null
+  amount?: number | null
+  decimals?: number | null
 }
 
 export interface ItemEntity {
-  id?: string
-  title?: string
-  category?: string
-  price?: Price
-  picture_url?: string
-  condition?: string
-  free_shipping?: boolean
-  sold_qty?: number
-  description?: string
+  id?: string | null
+  title?: string | null
+  category?: string | null
+  price?: Price | null
+  picture_url?: string | null
+  condition?: string | null
+  free_shipping?: boolean | null
+  sold_qty?: number | null
+  description?: string | null
 }
 
 export interface ItemsEntity {
