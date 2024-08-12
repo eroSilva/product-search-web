@@ -1,0 +1,9 @@
+/**
+ * Convert px to rem
+ * @param {number} $px - The pixel value
+ * @param {number} $base - The base font size
+ * @return {number} - The rem value
+ */
+@function convertPxTorem($px, $base) {
+  @return #{$px / $base}rem;
+}

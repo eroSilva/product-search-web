@@ -1,6 +1,7 @@
-$color-primary: blueviolet;
+@import '@/ui/core/variables.module.scss';
 
 .title {
-  color: $color-primary;
-  border-bottom: solid 2px darken($color-primary, 10);
+  color: $primary-color;
+  border-bottom: solid 2px darken($primary-color, 10);
+  padding: $size-2;
 }

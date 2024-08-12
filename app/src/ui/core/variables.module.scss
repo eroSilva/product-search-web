@@ -1,5 +1,52 @@
-$primary-color: #64ff00;
- 
+@import './functions.module.scss';
+
+/**
+ * Base font definitions
+ */
+$base-font-size: 16px;
+
+/**
+ * Colors
+ */
+$primary-color: #ffe600;
+$secondary-color: #3483fa;
+$neutral-primary-color: #333333;
+$neutral-secondary-color: #999999;
+$neutral-tertiary-color: #eeeeee;
+
+/**
+ * Sizes
+ */
+$size-0: convertPxTorem($base-font-size, 0);
+$size-1: convertPxTorem($base-font-size, 2px);
+$size-2: convertPxTorem($base-font-size, 4px);
+$size-3: convertPxTorem($base-font-size, 6px);
+$size-4: convertPxTorem($base-font-size, 8px);
+$size-5: convertPxTorem($base-font-size, 10px);
+$size-6: convertPxTorem($base-font-size, 12px);
+$size-7: convertPxTorem($base-font-size, 14px);
+$size-8: convertPxTorem($base-font-size, 16px);
+$size-9: convertPxTorem($base-font-size, 18px);
+$size-10: convertPxTorem($base-font-size, 20px);
+$size-11: convertPxTorem($base-font-size, 22px);
+$size-12: convertPxTorem($base-font-size, 24px);
+
 :export {
-  primaryColor: $primary-color;
+  base-font-size: $base-font-size;
+  primary-color: $primary-color;
+  secondary-color: $secondary-color;
+  neutral-primary-color: $neutral-primary-color;
+  neutral-secondary-color: $neutral-secondary-color;
+  neutral-tertiary-color: $neutral-tertiary-color;
+  size-0: $size-0;
+  size-1: $size-1;
+  size-2: $size-2;
+  size-3: $size-3;
+  size-4: $size-4;
+  size-5: $size-5;
+  size-6: $size-6;
+  size-7: $size-7;
+  size-8: $size-8;
+  size-9: $size-9;
+  size-10: $size-10;
 }
