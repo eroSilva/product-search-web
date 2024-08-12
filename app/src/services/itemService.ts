@@ -1,4 +1,4 @@
-import { ItemEntity, ItemsEntity } from '@/domain/entities'
+import { ItemEntity, ItemsEntity } from '@product-search-web/shared'
 
 export const getItem = async (id: string): Promise<ItemEntity> => {
   const res = await fetch(`http://localhost:8000/api/item/${id}`)

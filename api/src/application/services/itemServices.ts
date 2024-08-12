@@ -1,9 +1,8 @@
+import { ItemEntity, ItemsEntity } from '@product-search-web/shared'
 import { getData, serviceErrorInstance } from '../../infrastructure'
 import {
   ItemsRepository,
   ItemRepository,
-  ItemsEntity,
-  ItemEntity,
   createItems,
   createItem,
 } from '../../domain'

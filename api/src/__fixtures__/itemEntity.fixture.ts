@@ -1,4 +1,4 @@
-import { ItemEntity, ItemsEntity } from '../domain'
+import { ItemEntity, ItemsEntity } from '@product-search-web/shared'
 
 export const itemEntityNullableFixture: ItemEntity = {
   category: null,
