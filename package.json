@@ -29,6 +29,7 @@
   },
   "workspaces": [
     "app",
-    "api"
+    "api",
+    "shared"
   ]
 }
