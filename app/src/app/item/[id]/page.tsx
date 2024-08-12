@@ -6,11 +6,23 @@ interface ItemProps {
   }
 }
 
-export default function Item({ params }: ItemProps) {
+async function getData(id: string) {
+  const res = await fetch(`http://localhost:8000/api/item/${id}`)
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch data')
+  }
+
+  return res.json()
+}
+
+export default async function Item({ params }: ItemProps) {
+  const data = await getData(params?.id)
+
   return (
     <>
-      <Title>Página de detalhes do Produto</Title>
-      <p>{params.id}</p>
+      <Title>{data.title}</Title>
+      <pre>{JSON.stringify(data, undefined, 2)}</pre>
     </>
   )
 }
