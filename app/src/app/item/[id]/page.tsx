@@ -1,4 +1,5 @@
 import { Title } from '@/ui/components'
+import { getItem } from '@/services/itemService'
 
 interface ItemProps {
   params: {
@@ -6,18 +7,8 @@ interface ItemProps {
   }
 }
 
-async function getData(id: string) {
-  const res = await fetch(`http://localhost:8000/api/item/${id}`)
-
-  if (!res.ok) {
-    throw new Error('Failed to fetch data')
-  }
-
-  return res.json()
-}
-
 export default async function Item({ params }: ItemProps) {
-  const data = await getData(params?.id)
+  const data = await getItem(params?.id)
 
   return (
     <>
