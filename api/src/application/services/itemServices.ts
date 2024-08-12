@@ -1,5 +1,5 @@
 import { ItemEntity, ItemsEntity } from '@product-search-web/shared'
-import { getData, serviceErrorInstance } from '../../infrastructure'
+import { getData, serviceErrorInstance } from '@/infrastructure'
 import {
   ItemsRepository,
   ItemRepository,

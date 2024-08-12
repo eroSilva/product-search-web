@@ -1,6 +1,6 @@
 import express, { Request, Response, Application } from 'express'
-import { getItems, getItem } from '../services/itemServices'
-import { isCustomErrorInstance } from '../../infrastructure'
+import { getItems, getItem } from '@/application/services'
+import { isCustomErrorInstance } from '@/infrastructure'
 
 const app: Application = express()
 

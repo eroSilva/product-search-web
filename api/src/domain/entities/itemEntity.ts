@@ -1,9 +1,6 @@
 import { ItemEntity, ItemsEntity } from '@product-search-web/shared'
-import {
-  ItemsRepository,
-  ItemRepository,
-} from '../repositories/itemRepository.model'
-import { extractDecimalDigits } from '../../utils'
+import { ItemsRepository, ItemRepository } from '@/domain'
+import { extractDecimalDigits } from '@/utils'
 
 export const createItem = (itemsRepository: ItemRepository): ItemEntity => {
   return {

@@ -1,7 +1,7 @@
 import express, { Application } from 'express'
 import cookieParser from 'cookie-parser'
 import cors from 'cors'
-import { itemsRouter, itemRouter } from './application/controllers'
+import { itemsRouter, itemRouter } from '@/application/controllers'
 
 const app: Application = express()
 const port = process.env.PORT || 8000
