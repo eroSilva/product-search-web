@@ -10,6 +10,7 @@ const config: Config = {
   testEnvironment: 'jsdom',
   collectCoverage: true,
   collectCoverageFrom: ['./src/**'],
+  setupFilesAfterEnv: ['<rootDir>/tests/setupAfterEnv.ts'],
   coverageThreshold: {
     global: {
       branches: 80,

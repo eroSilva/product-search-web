@@ -1,0 +1,6 @@
+$color-primary: blueviolet;
+
+.title {
+  color: $color-primary;
+  border-bottom: solid 2px darken($color-primary, 10);
+}
