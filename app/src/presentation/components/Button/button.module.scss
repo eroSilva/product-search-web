@@ -1,0 +1,38 @@
+@import '@/presentation/core/variables.module.scss';
+
+.root {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: $size-18;
+  border: none;
+  border-radius: $size-4;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.primary {
+  background-color: $secondary-color;
+  color: white;
+
+  &:hover {
+    background-color: darken($secondary-color, 10%);
+  }
+
+  &:active {
+    background-color: darken($secondary-color, 15%);
+  }
+}
+
+.secondary {
+  background-color: $neutral-tertiary-color;
+  color: $neutral-primary-color;
+
+  &:hover {
+    background-color: darken($neutral-tertiary-color, 10%);
+  }
+
+  &:active {
+    background-color: darken($neutral-tertiary-color, 15%);
+  }
+}

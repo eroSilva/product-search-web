@@ -1,11 +1,15 @@
 import { ButtonHTMLAttributes } from 'react'
+import styles from './button.module.scss'
 
-type ButtonProps<T extends HTMLElement> = ButtonHTMLAttributes<T>
-
-export const FancyButton = (props: ButtonProps<HTMLButtonElement>) => {
-  return (
-    <button className="MyClassName" {...props}>
-      {props.children}
-    </button>
-  )
+interface ButtonProps<T extends HTMLElement> extends ButtonHTMLAttributes<T> {
+  hierarchy?: 'primary' | 'secondary'
 }
+
+export const Button = ({
+  hierarchy = 'primary',
+  ...props
+}: ButtonProps<HTMLButtonElement>) => (
+  <button className={`${styles.root} ${styles[hierarchy]} `} {...props}>
+    {props.children}
+  </button>
+)
