@@ -7,9 +7,13 @@ interface ButtonProps<T extends HTMLElement> extends ButtonHTMLAttributes<T> {
 
 export const Button = ({
   hierarchy = 'primary',
+  className,
   ...props
 }: ButtonProps<HTMLButtonElement>) => (
-  <button className={`${styles.root} ${styles[hierarchy]} `} {...props}>
+  <button
+    className={`${styles.root} ${styles[hierarchy]} ${className}`}
+    {...props}
+  >
     {props.children}
   </button>
 )
