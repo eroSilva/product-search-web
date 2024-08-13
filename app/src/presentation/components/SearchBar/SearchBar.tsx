@@ -22,7 +22,12 @@ export const SearchBar = () => {
         aria-label="Campo de busca"
         placeholder="Buscar por produtos"
       />
-      <Button hierarchy="secondary" type="submit" aria-label="Procurar">
+      <Button
+        hierarchy="secondary"
+        type="submit"
+        aria-label="Procurar"
+        className={styles.button}
+      >
         <Image
           src="/icon-serach.png"
           width={27}
