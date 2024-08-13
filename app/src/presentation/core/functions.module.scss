@@ -1,9 +1,27 @@
 /**
  * Convert px to rem
+ * 
  * @param {number} $px - The pixel value
  * @param {number} $base - The base font size
  * @return {number} - The rem value
  */
-@function convertPxTorem($px, $base-font-size) {
+@function convert-px-to-rem($px, $base-font-size) {
   @return $px / $base-font-size * 1rem;
+}
+
+/**
+ * Repeats a given term a specified number of times.
+ *
+ * @param {string} term - The term to be repeated.
+ * @param {number} count - The number of times to repeat the term.
+ * @returns {string} - The repeated term.
+ */
+@function repeat-term($term, $times) {
+  $result: '';
+
+  @for $i from 1 through $times {
+    $result: $result + $term + ' ';
+  }
+
+  @return str-slice($result, 1, str-length($result) - 1);
 }

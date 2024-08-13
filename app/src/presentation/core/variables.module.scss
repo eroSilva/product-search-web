@@ -17,23 +17,23 @@ $neutral-tertiary-color: #eeeeee;
 /**
  * Sizes
  */
-$size-0: convertPxTorem(0px, $base-font-size);
-$size-2: convertPxTorem(2px, $base-font-size);
-$size-4: convertPxTorem(4px, $base-font-size);
-$size-6: convertPxTorem(6px, $base-font-size);
-$size-8: convertPxTorem(8px, $base-font-size);
-$size-10: convertPxTorem(10px, $base-font-size);
-$size-12: convertPxTorem(12px, $base-font-size);
-$size-14: convertPxTorem(14px, $base-font-size);
-$size-16: convertPxTorem(16px, $base-font-size);
-$size-18: convertPxTorem(18px, $base-font-size);
-$size-20: convertPxTorem(20px, $base-font-size);
-$size-22: convertPxTorem(22px, $base-font-size);
-$size-24: convertPxTorem(24px, $base-font-size);
+$size-0: convert-px-to-rem(0px, $base-font-size);
+$size-2: convert-px-to-rem(2px, $base-font-size);
+$size-4: convert-px-to-rem(4px, $base-font-size);
+$size-6: convert-px-to-rem(6px, $base-font-size);
+$size-8: convert-px-to-rem(8px, $base-font-size);
+$size-10: convert-px-to-rem(10px, $base-font-size);
+$size-12: convert-px-to-rem(12px, $base-font-size);
+$size-14: convert-px-to-rem(14px, $base-font-size);
+$size-16: convert-px-to-rem(16px, $base-font-size);
+$size-18: convert-px-to-rem(18px, $base-font-size);
+$size-20: convert-px-to-rem(20px, $base-font-size);
+$size-22: convert-px-to-rem(22px, $base-font-size);
+$size-24: convert-px-to-rem(24px, $base-font-size);
 
 /**
 * Layout
 */
 $grid-columns: 12;
 $grid-gap: $size-20;
-$container-width: convertPxTorem(1470px, $base-font-size);
+$container-width: convert-px-to-rem(1768px, $base-font-size);

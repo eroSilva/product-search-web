@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
 import { Header } from '@/presentation/components'
+import '@/presentation/core/reset.modules.scss'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -14,7 +17,19 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body>
-        <Header />
+        <Header
+          logo={
+            <Link href="/">
+              <Image
+                src="/logo-ml.png"
+                alt="Logo Mercado Livre"
+                width={79}
+                height={54}
+                priority
+              />
+            </Link>
+          }
+        />
         <main>{children}</main>
       </body>
     </html>
