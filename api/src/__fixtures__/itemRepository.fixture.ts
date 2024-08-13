@@ -64,7 +64,7 @@ export const itemRepositoryFixture: ItemRepository = {
   stop_time: '2043-05-25T04:00:00.000Z',
   seller: {
     id: 130090710,
-    nickname: 'LOI BRASIL',
+    nickname: 'JAQUIM SHOP',
   },
   attributes: [
     {
@@ -371,7 +371,7 @@ export const itemsRepositoryFixture: ItemsRepository = {
       stop_time: '2043-05-25T04:00:00.000Z',
       seller: {
         id: 130090710,
-        nickname: 'LOI BRASIL',
+        nickname: 'JAQUIM SHOP',
       },
       attributes: [
         {

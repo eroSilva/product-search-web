@@ -16,6 +16,7 @@ export const createItem = (itemsRepository: ItemRepository): ItemEntity => {
     picture_url: itemsRepository.thumbnail || null,
     condition: itemsRepository.condition || null,
     free_shipping: itemsRepository.shipping?.free_shipping || null,
+    seller: itemsRepository.seller?.nickname || null,
   }
 }
 

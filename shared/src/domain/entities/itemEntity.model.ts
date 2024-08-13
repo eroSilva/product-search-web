@@ -14,6 +14,7 @@ export interface ItemEntity {
   free_shipping?: boolean | null
   sold_qty?: number | null
   description?: string | null
+  seller?: string | null
 }
 
 export interface ItemsEntity {

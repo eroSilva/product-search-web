@@ -13,6 +13,7 @@ export const itemEntityNullableFixture: ItemEntity = {
     decimals: null,
   },
   title: null,
+  seller: null,
 }
 
 export const itemEntityFixture: ItemEntity = {
@@ -29,6 +30,7 @@ export const itemEntityFixture: ItemEntity = {
   },
   title:
     'Modulo Taramps Ts400x4 400w 2 Ohms Rca Ts 400x4 4 Canais 100w Amplificador 400rms T400 4 Canais Potencia Taramps Som Para Carro Moto Caminhonete Automotivo',
+  seller: 'JAQUIM SHOP',
 }
 
 export const itemsEntityEmptyFixture: ItemsEntity = {
@@ -56,6 +58,7 @@ export const itemsEntityFixture: ItemsEntity = {
       },
       title:
         'Modulo Taramps Ts400x4 400w 2 Ohms Rca Ts 400x4 4 Canais 100w Amplificador 400rms T400 4 Canais Potencia Taramps Som Para Carro Moto Caminhonete Automotivo',
+      seller: 'JAQUIM SHOP',
     },
     {
       category: 'MLB429490',
@@ -71,6 +74,7 @@ export const itemsEntityFixture: ItemsEntity = {
         decimals: 25,
       },
       title: 'Bomba De Ar Pedal Alta Pressão Pneu Moto Bicicleta Colchão',
+      seller: 'JAQUIM SHOP',
     },
   ],
 }
