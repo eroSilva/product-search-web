@@ -1,0 +1,107 @@
+@import '@/presentation/core/variables.module.scss';
+@import '@/presentation/core/functions.module.scss';
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  padding: $size-16;
+
+  @media (min-width: $breakpoint-sm) {
+    display: flex;
+  }
+}
+
+.picture {
+  border-radius: $size-4;
+  border: convert-px-to-rem(1px, $base-font-size) solid $neutral-tertiary-color;
+}
+
+.infos {
+  padding: $size-16 0 0;
+  width: 100%;
+
+  @media (min-width: $breakpoint-sm) {
+    padding: $size-22 $size-16;
+  }
+
+  @media (min-width: $breakpoint-lg) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__main {
+  }
+
+  &__header {
+    display: flex;
+    padding-right: $size-8;
+  }
+
+  &__currency {
+    font-size: $size-20;
+    line-height: $size-22;
+    margin-bottom: $size-12;
+    margin-right: $size-16;
+
+    @media (min-width: $breakpoint-sm) {
+      font-size: $size-24;
+      line-height: $size-28;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      margin-bottom: $size-32;
+    }
+  }
+
+  &__title {
+    font-size: $size-14;
+    line-height: $size-18;
+    color: $neutral-primary-color;
+
+    &:active {
+      color: $secondary-color;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+
+    @media (min-width: $breakpoint-sm) {
+      font-size: $size-18;
+      line-height: $size-20;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+
+  &__seller {
+    font-size: $size-12;
+    line-height: $size-16;
+    margin-top: $size-18;
+
+    @media (min-width: $breakpoint-sm) {
+      width: 100%;
+      max-width: convert-px-to-rem(200px, $base-font-size);
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      margin-top: $size-32;
+    }
+  }
+}
