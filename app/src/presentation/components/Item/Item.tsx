@@ -1,5 +1,8 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
+import { useFallbackImage } from '@/application/controllers'
 import { currencyFormatter } from '@/utils'
 import styles from './item.module.scss'
 
@@ -27,15 +30,18 @@ export const Item = ({
   currency,
   isFreeShipping,
 }: ItemProps) => {
+  const { imgSrc, handleImageFallback } = useFallbackImage(image?.src)
+
   return (
     <div className={styles.wrapper}>
       {image && image.src && (
         <Image
-          src={image.src}
+          src={imgSrc}
           alt={image.alt || ''}
           width={180}
           height={180}
           className={styles.picture}
+          onError={handleImageFallback}
         />
       )}
       <div className={styles['infos']}>

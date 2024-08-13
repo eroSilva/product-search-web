@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { useSearchItems } from '@/application/controllers/useSearchItems'
+import { useSearchItems } from '@/application/controllers'
 import { Button } from '@/presentation/components'
 import styles from './search-bar.module.scss'
 
