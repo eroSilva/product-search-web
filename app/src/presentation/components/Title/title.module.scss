@@ -1,7 +1,5 @@
 @import '@/presentation/core/variables.module.scss';
 
 .title {
-  color: $primary-color;
-  border-bottom: solid 2px darken($primary-color, 10);
   padding: $size-2;
 }

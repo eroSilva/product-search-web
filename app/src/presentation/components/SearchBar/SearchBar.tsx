@@ -20,7 +20,7 @@ export const SearchBar = () => {
         defaultValue={search}
         className={styles.input}
         aria-label="Campo de busca"
-        placeholder="Buscar"
+        placeholder="Buscar por um produto"
       />
       <Button
         hierarchy="secondary"

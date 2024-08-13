@@ -1,10 +1,10 @@
-import Image from 'next/image'
-import { Title, Button } from '@/presentation/components'
+import { Home } from '@/presentation/templates'
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <>
-      <Title>Página principal</Title>
-    </>
+    <Home
+      title="Bem vindo ao buscador de produtos do Mercado livre"
+      description="Pra começar, digite o nome do produto que deseja localizar, na barra de pesquisa acima"
+    />
   )
 }
