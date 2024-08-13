@@ -17,36 +17,23 @@ $neutral-tertiary-color: #eeeeee;
 /**
  * Sizes
  */
-$size-0: convertPxTorem($base-font-size, 0);
-$size-1: convertPxTorem($base-font-size, 2px);
-$size-2: convertPxTorem($base-font-size, 4px);
-$size-3: convertPxTorem($base-font-size, 6px);
-$size-4: convertPxTorem($base-font-size, 8px);
-$size-5: convertPxTorem($base-font-size, 10px);
-$size-6: convertPxTorem($base-font-size, 12px);
-$size-7: convertPxTorem($base-font-size, 14px);
-$size-8: convertPxTorem($base-font-size, 16px);
-$size-9: convertPxTorem($base-font-size, 18px);
-$size-10: convertPxTorem($base-font-size, 20px);
-$size-11: convertPxTorem($base-font-size, 22px);
-$size-12: convertPxTorem($base-font-size, 24px);
+$size-0: convertPxTorem(0px, $base-font-size);
+$size-2: convertPxTorem(2px, $base-font-size);
+$size-4: convertPxTorem(4px, $base-font-size);
+$size-6: convertPxTorem(6px, $base-font-size);
+$size-8: convertPxTorem(8px, $base-font-size);
+$size-10: convertPxTorem(10px, $base-font-size);
+$size-12: convertPxTorem(12px, $base-font-size);
+$size-14: convertPxTorem(14px, $base-font-size);
+$size-16: convertPxTorem(16px, $base-font-size);
+$size-18: convertPxTorem(18px, $base-font-size);
+$size-20: convertPxTorem(20px, $base-font-size);
+$size-22: convertPxTorem(22px, $base-font-size);
+$size-24: convertPxTorem(24px, $base-font-size);
 
-:export {
-  base-font-size: $base-font-size;
-  primary-color: $primary-color;
-  secondary-color: $secondary-color;
-  neutral-primary-color: $neutral-primary-color;
-  neutral-secondary-color: $neutral-secondary-color;
-  neutral-tertiary-color: $neutral-tertiary-color;
-  size-0: $size-0;
-  size-1: $size-1;
-  size-2: $size-2;
-  size-3: $size-3;
-  size-4: $size-4;
-  size-5: $size-5;
-  size-6: $size-6;
-  size-7: $size-7;
-  size-8: $size-8;
-  size-9: $size-9;
-  size-10: $size-10;
-}
+/**
+* Layout
+*/
+$grid-columns: 12;
+$grid-gap: $size-20;
+$container-width: convertPxTorem(1470px, $base-font-size);
