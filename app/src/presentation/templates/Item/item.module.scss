@@ -1,0 +1,22 @@
+@import '@/presentation/core/functions.module.scss';
+@import '@/presentation/core/variables.module.scss';
+@import '@/presentation/core/layout.module.scss';
+
+.section {
+  @extend .container;
+  @extend .grid;
+
+  grid-template-areas: '#{repeat-term('product-list', 4)}';
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-areas: '. #{repeat-term('product-list', 10)} .';
+  }
+}
+
+.area {
+  grid-area: product-list;
+  background-color: $neutral-light;
+  border-radius: $size-4;
+  padding: $size-26 $size-20;
+  margin-top: $size-16;
+}
