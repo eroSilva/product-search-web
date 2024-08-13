@@ -13,17 +13,17 @@
   }
 }
 
-.item {
-  &:not(:last-of-type) {
-    border-bottom: convert-px-to-rem(1px, $base-font-size) solid
-      $neutral-tertiary-color;
-  }
-}
-
 .area {
   grid-area: product-list;
   background-color: $neutral-light;
   border-radius: $size-4;
   padding: $size-16;
   margin-top: $size-16;
+}
+
+.item {
+  &:not(:last-of-type) {
+    border-bottom: convert-px-to-rem(1px, $base-font-size) solid
+      $neutral-tertiary-color;
+  }
 }

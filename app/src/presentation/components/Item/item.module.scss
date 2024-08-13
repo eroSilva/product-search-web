@@ -29,79 +29,76 @@
     justify-content: space-between;
     align-items: flex-start;
   }
+}
 
-  &__main {
+.header {
+  display: flex;
+  padding-right: $size-8;
+}
+
+.currency {
+  font-size: $size-20;
+  line-height: $size-22;
+  margin-bottom: $size-12;
+  margin-right: $size-16;
+
+  @media (min-width: $breakpoint-sm) {
+    font-size: $size-24;
+    line-height: $size-28;
   }
 
-  &__header {
-    display: flex;
-    padding-right: $size-8;
+  @media (min-width: $breakpoint-lg) {
+    margin-bottom: $size-32;
+  }
+}
+
+.title {
+  font-size: $size-14;
+  line-height: $size-18;
+  color: $neutral-primary-color;
+
+  &:active {
+    color: $secondary-color;
   }
 
-  &__currency {
-    font-size: $size-20;
-    line-height: $size-22;
-    margin-bottom: $size-12;
-    margin-right: $size-16;
+  a {
+    color: inherit;
+    text-decoration: none;
 
-    @media (min-width: $breakpoint-sm) {
-      font-size: $size-24;
-      line-height: $size-28;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
     }
-
-    @media (min-width: $breakpoint-lg) {
-      margin-bottom: $size-32;
-    }
   }
 
-  &__title {
-    font-size: $size-14;
-    line-height: $size-18;
-    color: $neutral-primary-color;
+  @media (min-width: $breakpoint-sm) {
+    font-size: $size-18;
+    line-height: $size-20;
+  }
 
-    &:active {
+  @media (min-width: $breakpoint-lg) {
+    &:hover {
       color: $secondary-color;
     }
+  }
+}
 
-    a {
-      color: inherit;
-      text-decoration: none;
+.seller {
+  font-size: $size-12;
+  line-height: $size-16;
+  margin-top: $size-18;
 
-      &::before {
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-      }
-    }
-
-    @media (min-width: $breakpoint-sm) {
-      font-size: $size-18;
-      line-height: $size-20;
-    }
-
-    @media (min-width: $breakpoint-lg) {
-      &:hover {
-        color: $secondary-color;
-      }
-    }
+  @media (min-width: $breakpoint-sm) {
+    width: 100%;
+    max-width: convert-px-to-rem(200px, $base-font-size);
   }
 
-  &__seller {
-    font-size: $size-12;
-    line-height: $size-16;
-    margin-top: $size-18;
-
-    @media (min-width: $breakpoint-sm) {
-      width: 100%;
-      max-width: convert-px-to-rem(200px, $base-font-size);
-    }
-
-    @media (min-width: $breakpoint-lg) {
-      margin-top: $size-32;
-    }
+  @media (min-width: $breakpoint-lg) {
+    margin-top: $size-32;
   }
 }

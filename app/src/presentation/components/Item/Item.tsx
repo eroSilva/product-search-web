@@ -38,12 +38,11 @@ export const Item = ({
           className={styles.picture}
         />
       )}
-
       <div className={styles['infos']}>
-        <div className={styles['infos__main']}>
-          <span className={styles['infos__header']}>
+        <div>
+          <span className={styles['header']}>
             {currency && amount && (
-              <span className={styles['infos__currency']}>
+              <span className={styles['currency']}>
                 {currencyFormatter({ currency, value: amount })}
               </span>
             )}
@@ -56,15 +55,13 @@ export const Item = ({
               />
             )}
           </span>
-
           {title && href && (
-            <span className={styles['infos__title']}>
+            <span className={styles['title']}>
               <Link href={href}>{title}</Link>
             </span>
           )}
         </div>
-
-        {seller && <p className={styles['infos__seller']}>{seller}</p>}
+        {seller && <p className={styles['seller']}>{seller}</p>}
       </div>
     </div>
   )

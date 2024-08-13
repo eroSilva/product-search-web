@@ -1,0 +1,101 @@
+@import '@/presentation/core/functions.module.scss';
+@import '@/presentation/core/variables.module.scss';
+@import '@/presentation/core/layout.module.scss';
+
+.section {
+  @extend .container;
+  @extend .grid;
+
+  grid-template-areas: '#{repeat-term('product-details', 4)}';
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-areas: '. #{repeat-term('product-details', 10)} .';
+  }
+}
+
+.area {
+  grid-area: product-details;
+  background-color: $neutral-light;
+  border-radius: $size-4;
+  padding: $size-32;
+  margin-top: $size-16;
+}
+
+.grid-item {
+  @extend .grid;
+
+  grid-template-areas:
+    '#{repeat-term('picture', 4)}'
+    '#{repeat-term('infos', 4)}'
+    '#{repeat-term('description', 4)}';
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-areas:
+      '#{repeat-term('picture', 6)} #{repeat-term('infos', 4)}'
+      '#{repeat-term('description', 10)}';
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    grid-template-areas:
+      '#{repeat-term('picture', 7)} #{repeat-term('infos', 3)}'
+      '#{repeat-term('description', 7)} . . .';
+  }
+}
+
+.picture {
+  grid-area: picture;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.infos {
+  grid-area: infos;
+
+  @media (min-width: $breakpoint-md) {
+    padding-right: $size-32;
+  }
+}
+
+.sold-quantity {
+  font-size: $size-14;
+  line-height: $size-18;
+  margin-bottom: $size-8;
+
+  @media (min-width: $breakpoint-md) {
+    margin-bottom: $size-16;
+  }
+}
+
+.title {
+  font-size: $size-18;
+  line-height: $size-24;
+  font-weight: 700;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $size-24;
+    line-height: $size-32;
+  }
+}
+
+.price {
+  font-size: $size-36;
+  line-height: $size-40;
+  margin: $size-24 0;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $size-46;
+    line-height: $size-48;
+    margin: $size-32 0;
+  }
+}
+
+.description {
+  grid-area: description;
+}

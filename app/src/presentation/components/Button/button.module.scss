@@ -3,11 +3,13 @@
 .root {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   flex-shrink: 0;
   padding: $size-18;
   border: none;
   border-radius: $size-4;
   transition: background-color 0.2s ease-in-out;
+  text-align: center;
   cursor: pointer;
 }
 
@@ -35,4 +37,16 @@
   &:active {
     background-color: darken($neutral-tertiary-color, 15%);
   }
+}
+
+.medium {
+  font-size: $size-16;
+}
+
+.large {
+  font-size: $size-24;
+}
+
+.is-full {
+  width: 100%;
 }

@@ -1,4 +1,4 @@
-import { Title } from '@/presentation/components'
+import { Item } from '@/presentation/templates'
 import { getItem } from '@/application/services/itemService'
 
 interface ItemProps {
@@ -7,13 +7,8 @@ interface ItemProps {
   }
 }
 
-export default async function Item({ params }: ItemProps) {
+export default async function ItemPage({ params }: ItemProps) {
   const data = await getItem(params?.id)
 
-  return (
-    <>
-      <Title>{data.title}</Title>
-      <pre>{JSON.stringify(data, undefined, 2)}</pre>
-    </>
-  )
+  return <Item {...data} />
 }
