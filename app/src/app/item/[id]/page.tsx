@@ -1,5 +1,5 @@
-import { Title } from '@/ui/components'
-import { getItem } from '@/services/itemService'
+import { Title } from '@/presentation/components'
+import { getItem } from '@/application/services/itemService'
 
 interface ItemProps {
   params: {

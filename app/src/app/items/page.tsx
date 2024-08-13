@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { Title } from '@/ui/components'
-import { getItems } from '@/services/itemService'
+import { Title } from '@/presentation/components'
+import { getItems } from '@/application/services/itemService'
 
 interface ItemsProps {
   searchParams: {
