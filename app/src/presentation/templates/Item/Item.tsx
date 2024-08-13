@@ -4,8 +4,8 @@ import Image from 'next/image'
 import { ItemEntity } from '@product-search-web/shared'
 import { useFallbackImage } from '@/application/controllers'
 import { currencyFormatter } from '@/utils'
-import styles from './item.module.scss'
 import { Button } from '@/presentation/components'
+import styles from './item.module.scss'
 
 export const Item = ({ title, price, picture_url }: ItemEntity) => {
   const { imgSrc, handleImageFallback } = useFallbackImage(
@@ -27,7 +27,6 @@ export const Item = ({ title, price, picture_url }: ItemEntity) => {
               />
             </picture>
           )}
-
           <div className={styles.infos}>
             <p className={styles['sold-quantity']}>Nuevo - 24 vendidos</p>
             <h1 className={styles.title}>{title}</h1>
@@ -43,7 +42,6 @@ export const Item = ({ title, price, picture_url }: ItemEntity) => {
               Comprar
             </Button>
           </div>
-
           <div className={styles.description}>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed
             debitis voluptates magnam possimus? Hic, alias fuga, placeat

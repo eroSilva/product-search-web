@@ -1,0 +1,34 @@
+@import '@/presentation/core/functions.module.scss';
+@import '@/presentation/core/variables.module.scss';
+@import '@/presentation/core/layout.module.scss';
+
+.section {
+  @extend .container;
+
+  min-height: calc(100vh - convert-px-to-rem(100px, $base-font-size));
+  padding: $size-14 0;
+  text-align: center;
+  padding-top: convert-px-to-rem(80px, $base-font-size);
+}
+
+.title {
+  font-size: $size-24;
+  line-height: $size-28;
+  margin-bottom: $size-16;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $size-36;
+    line-height: $size-40;
+    margin-bottom: $size-20;
+  }
+}
+
+.emoji {
+  display: block;
+  font-size: convert-px-to-rem(180px, $base-font-size);
+  margin: $size-32 0;
+}
+
+.description {
+  margin-top: $size-24;
+}
