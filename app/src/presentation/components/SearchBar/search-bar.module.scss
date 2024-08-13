@@ -12,14 +12,19 @@
   padding: 10px;
   border: none;
   border-radius: 5px;
-  font-size: $size-18;
-  line-height: $size-22;
+  font-size: $size-16;
+  line-height: $size-20;
   padding: $size-18 $size-20;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 
   &::placeholder {
     color: $neutral-secondary-color;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $size-18;
+    line-height: $size-22;
   }
 }
 

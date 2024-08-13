@@ -4,11 +4,16 @@
   width: 100%;
   max-width: $container-width;
   margin: 0 auto;
+  padding: 0 $size-20;
 }
 
 .grid {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat($grid-columns, 1fr);
   gap: $grid-gap;
+  grid-template-columns: repeat($grid-columns, 1fr);
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat($grid-columns-md, 1fr);
+  }
 }

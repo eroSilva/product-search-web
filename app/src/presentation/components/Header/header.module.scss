@@ -4,19 +4,26 @@
 
 .wrapper {
   background-color: $primary-color;
+  padding: $size-14 0;
 }
 
 .container {
   @extend .container;
   @extend .grid;
+  grid-template-areas: '#{repeat-term('search-form', 4)}';
 
-  grid-template-areas: '. #{repeat-term('search-form', 10)} .';
+  @media (min-width: $breakpoint-md) {
+    grid-template-areas: '. #{repeat-term('search-form', 10)} .';
+  }
 }
 
 .area {
   grid-area: search-form;
-  gap: convert-px-to-rem(40px, $base-font-size);
+  gap: $size-20;
   display: flex;
   align-items: center;
-  padding: $size-14 0;
+
+  @media (min-width: $breakpoint-md) {
+    gap: convert-px-to-rem(40px, $base-font-size);
+  }
 }

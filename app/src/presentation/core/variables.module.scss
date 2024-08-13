@@ -34,6 +34,15 @@ $size-24: convert-px-to-rem(24px, $base-font-size);
 /**
 * Layout
 */
-$grid-columns: 12;
+$grid-columns: 4;
+$grid-columns-md: 12;
 $grid-gap: $size-20;
-$container-width: convert-px-to-rem(1768px, $base-font-size);
+$container-width: convert-px-to-rem(1748px, $base-font-size);
+
+/**
+* Breakpoints
+*/
+$breakpoint-sm: convert-px-to-rem(576px, $base-font-size);
+$breakpoint-md: convert-px-to-rem(768px, $base-font-size);
+$breakpoint-lg: convert-px-to-rem(992px, $base-font-size);
+$breakpoint-xl: convert-px-to-rem(1200px, $base-font-size);
