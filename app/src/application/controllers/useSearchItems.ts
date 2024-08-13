@@ -12,7 +12,9 @@ export const useSearchItems = () => {
     const formData = new FormData(form)
     const search = formData.get('search') as string
 
-    router.push(`/items?search=${search}`)
+    if (search) {
+      router.push(`/items?search=${search}`)
+    }
   }
 
   return { handleSearchSubmit, search }

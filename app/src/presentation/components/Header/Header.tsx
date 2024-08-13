@@ -1,31 +1,23 @@
-'use client'
+import Image from 'next/image'
+import Link from 'next/link'
+import { SearchBar } from '@/presentation/components'
+import styles from './header.module.scss'
 
-import { useSearchItems } from '@/application/controllers/useSearchItems'
-import styles from '@/presentation/components/Header/header.module.scss'
-
-interface HeaderProps {
-  logo: React.ReactNode
-}
-
-export const Header = ({ logo }: HeaderProps) => {
-  const { search, handleSearchSubmit } = useSearchItems()
-
+export const Header = () => {
   return (
     <header className={styles.wrapper}>
       <div className={styles.container}>
         <div className={styles.area}>
-          {logo}
-
-          <form action="/items" onSubmit={handleSearchSubmit}>
-            <label htmlFor="input-search">Buscar produto</label>
-            <input
-              id="input-search"
-              type="search"
-              name="search"
-              defaultValue={search}
+          <Link href="/">
+            <Image
+              src="/logo-ml.png"
+              alt="Logo Mercado Livre"
+              width={79}
+              height={54}
+              priority
             />
-            <button type="submit">Procurar</button>
-          </form>
+          </Link>
+          <SearchBar />
         </div>
       </div>
     </header>

@@ -1,0 +1,24 @@
+@import '@/presentation/core/variables.module.scss';
+// @import '@/presentation/core/functions.module.scss';
+// @import '@/presentation/core/layout.module.scss';
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: $size-18;
+  line-height: $size-22;
+  padding: $size-18 $size-20;
+
+  &::placeholder {
+    color: $neutral-secondary-color;
+  }
+}

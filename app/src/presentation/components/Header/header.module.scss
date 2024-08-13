@@ -15,4 +15,8 @@
 
 .area {
   grid-area: search-form;
+  gap: convert-px-to-rem(40px, $base-font-size);
+  display: flex;
+  align-items: center;
+  padding: $size-14 0;
 }
