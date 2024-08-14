@@ -5,8 +5,8 @@ import styles from './product-detail.module.scss'
 
 export const ProductDetail = ({ title, price, picture_url }: ItemEntity) => {
   return (
-    <section className={styles.section}>
-      <div className={styles.area}>
+    <section className={styles['content-wrapper']}>
+      <div className={styles['content-area']}>
         <div className={styles['grid-product']}>
           {picture_url && (
             <picture className={styles.picture}>

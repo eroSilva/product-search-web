@@ -1,4 +1,5 @@
 @import './variables.module.scss';
+@import './functions.module.scss';
 
 .container {
   width: 100%;
@@ -22,6 +23,25 @@
   width: 100%;
   border-radius: $size-4;
   animation: loading 1s infinite alternate;
+}
+
+.content-wrapper {
+  @extend .container;
+  @extend .grid;
+
+  grid-template-areas: '#{repeat-term('content-area', 4)}';
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-areas: '. #{repeat-term('content-area', 10)} .';
+  }
+}
+
+.content-area {
+  grid-area: content-area;
+  background-color: $neutral-light;
+  border-radius: $size-4;
+  padding: $size-16;
+  margin-top: $size-16;
 }
 
 @keyframes loading {

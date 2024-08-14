@@ -2,8 +2,8 @@ import styles from './product-detail-loading.module.scss'
 
 export const ProductDetailLoading = () => {
   return (
-    <section className={styles.section}>
-      <div className={styles.area}>
+    <section className={styles['content-wrapper']}>
+      <div className={styles['content-area']}>
         <div className={styles.product}>
           <div className={styles.image} />
           <div className={styles.infos}>

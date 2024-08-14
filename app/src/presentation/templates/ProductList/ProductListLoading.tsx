@@ -2,10 +2,10 @@ import styles from './product-list-loading.module.scss'
 
 export const ProductListLoading = () => {
   return (
-    <section className={styles.section}>
-      <div className={styles.area}>
+    <section className={styles['content-wrapper']}>
+      <div className={styles['content-area']}>
         {new Array(4).fill(0).map((_, index) => (
-          <div key={`suspens-${index}`} className={styles.product}>
+          <div key={`product-${index}`} className={styles.product}>
             <div className={styles.image} />
             <div className={styles.infos}>
               <div className={styles.price} />

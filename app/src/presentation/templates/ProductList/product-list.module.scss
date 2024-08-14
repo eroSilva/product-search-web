@@ -2,26 +2,17 @@
 @import '@/presentation/core/variables.module.scss';
 @import '@/presentation/core/layout.module.scss';
 
-.section {
-  @extend .container;
-  @extend .grid;
-
-  grid-template-areas: '#{repeat-term('product-list', 4)}';
-
-  @media (min-width: $breakpoint-md) {
-    grid-template-areas: '. #{repeat-term('product-list', 10)} .';
-  }
-}
-
-.area {
-  grid-area: product-list;
-  background-color: $neutral-light;
-  border-radius: $size-4;
-  padding: $size-16;
-  margin-top: $size-16;
-}
-
 .product {
+  padding: $size-16 0;
+
+  &:first-of-type {
+    padding-top: 0;
+  }
+
+  &:last-of-type {
+    padding-bottom: 0;
+  }
+
   &:not(:last-of-type) {
     border-bottom: convert-px-to-rem(1px, $base-font-size) solid
       $neutral-tertiary-color;

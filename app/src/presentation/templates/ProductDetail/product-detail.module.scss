@@ -2,25 +2,6 @@
 @import '@/presentation/core/variables.module.scss';
 @import '@/presentation/core/layout.module.scss';
 
-.section {
-  @extend .container;
-  @extend .grid;
-
-  grid-template-areas: '#{repeat-term('product-detail', 4)}';
-
-  @media (min-width: $breakpoint-md) {
-    grid-template-areas: '. #{repeat-term('product-detail', 10)} .';
-  }
-}
-
-.area {
-  grid-area: product-detail;
-  background-color: $neutral-light;
-  border-radius: $size-4;
-  padding: $size-32;
-  margin-top: $size-16;
-}
-
 .grid-product {
   @extend .grid;
 
@@ -30,6 +11,7 @@
     '#{repeat-term('description', 4)}';
 
   @media (min-width: $breakpoint-md) {
+    padding: $size-16;
     grid-template-columns: repeat(10, 1fr);
     grid-template-areas:
       '#{repeat-term('picture', 6)} #{repeat-term('infos', 4)}'

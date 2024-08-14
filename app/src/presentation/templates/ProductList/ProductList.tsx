@@ -6,8 +6,8 @@ type ProductListProps = Pick<ItemsEntity, 'query' | 'items'>
 
 export const ProductList = ({ query, items }: ProductListProps) => {
   return (
-    <section className={styles.section}>
-      <div className={styles.area}>
+    <section className={styles['content-wrapper']}>
+      <div className={styles['content-area']}>
         {items.length > 0 && (
           <ul>
             {items.map(item => (
