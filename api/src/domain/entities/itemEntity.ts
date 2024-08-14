@@ -17,9 +17,22 @@ interface CreateItems {
   category?: CategoryRepository
 }
 
-export const createItem = ({ item, category }: CreateItem): ItemEntity => {
-  const picture_url = item.pictures?.[0]?.url ?? item.thumbnail ?? null
+const createAttributes = (attributes: ItemRepository['attributes']) => {
+  return attributes?.reduce(
+    (acc: Record<string, string>[], { name, value_name }) => {
+      if (name && value_name) acc.push({ name, value: value_name })
 
+      return acc
+    },
+    [],
+  )
+}
+
+const createPictureUrl = (item: ItemRepository) => {
+  return item.pictures?.[0]?.url || item.thumbnail || null
+}
+
+export const createItem = ({ item, category }: CreateItem): ItemEntity => {
   return {
     id: item.id || null,
     title: item.title || null,
@@ -30,10 +43,11 @@ export const createItem = ({ item, category }: CreateItem): ItemEntity => {
       amount: Math.trunc(item?.price || 0) || null,
       decimals: extractDecimalDigits(item?.price || 0) || null,
     },
-    picture_url,
+    picture_url: createPictureUrl(item),
     condition: item.condition || null,
     free_shipping: item.shipping?.free_shipping || null,
     seller: item.seller?.nickname || null,
+    attributes: createAttributes(item.attributes) || [],
   }
 }
 

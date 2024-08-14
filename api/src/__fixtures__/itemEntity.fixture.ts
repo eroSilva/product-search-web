@@ -14,6 +14,7 @@ export const itemEntityNullableFixture: ItemEntity = {
   },
   title: null,
   seller: null,
+  attributes: [],
 }
 
 export const itemEntityFixture: ItemEntity = {
@@ -31,6 +32,16 @@ export const itemEntityFixture: ItemEntity = {
   title:
     'Modulo Taramps Ts400x4 400w 2 Ohms Rca Ts 400x4 4 Canais 100w Amplificador 400rms T400 4 Canais Potencia Taramps Som Para Carro Moto Caminhonete Automotivo',
   seller: 'JAQUIM SHOP',
+  attributes: [
+    {
+      name: 'Marca',
+      value: 'Taramps',
+    },
+    {
+      name: 'Cor',
+      value: 'Branco',
+    },
+  ],
 }
 
 export const itemsEntityEmptyFixture: ItemsEntity = {
@@ -59,6 +70,16 @@ export const itemsEntityFixture: ItemsEntity = {
       title:
         'Modulo Taramps Ts400x4 400w 2 Ohms Rca Ts 400x4 4 Canais 100w Amplificador 400rms T400 4 Canais Potencia Taramps Som Para Carro Moto Caminhonete Automotivo',
       seller: 'JAQUIM SHOP',
+      attributes: [
+        {
+          name: 'Marca',
+          value: 'Taramps',
+        },
+        {
+          name: 'Cor',
+          value: 'Branco',
+        },
+      ],
     },
     {
       categories: ['Celulares e Telefones', 'Celulares e Smartphones'],
@@ -75,6 +96,16 @@ export const itemsEntityFixture: ItemsEntity = {
       },
       title: 'Bomba De Ar Pedal Alta Pressão Pneu Moto Bicicleta Colchão',
       seller: 'JAQUIM SHOP',
+      attributes: [
+        {
+          name: 'Marca',
+          value: 'Taramps',
+        },
+        {
+          name: 'Cor',
+          value: 'Branco',
+        },
+      ],
     },
   ],
 }

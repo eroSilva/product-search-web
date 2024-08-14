@@ -1,7 +1,12 @@
-export interface Price {
+interface Price {
   currency?: string | null
   amount?: number | null
   decimals?: number | null
+}
+
+interface Attribute {
+  name?: string | null
+  value?: string | null
 }
 
 export interface ItemEntity {
@@ -15,6 +20,7 @@ export interface ItemEntity {
   sold_qty?: number | null
   description?: string | null
   seller?: string | null
+  attributes?: Attribute[] | null
 }
 
 export interface ItemsEntity {
