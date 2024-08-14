@@ -1,11 +1,11 @@
-import styles from './items-loading.module.scss'
+import styles from './product-list-loading.module.scss'
 
-export const ItemsLoading = () => {
+export const ProductListLoading = () => {
   return (
     <section className={styles.section}>
       <div className={styles.area}>
         {new Array(4).fill(0).map((_, index) => (
-          <div key={`suspens-${index}`} className={styles.item}>
+          <div key={`suspens-${index}`} className={styles.product}>
             <div className={styles.image} />
             <div className={styles.infos}>
               <div className={styles.price} />

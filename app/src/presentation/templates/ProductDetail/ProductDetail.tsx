@@ -1,13 +1,13 @@
 import { ItemEntity } from '@product-search-web/shared'
 import { currencyFormatter } from '@/utils'
 import { Button, Image } from '@/presentation/components'
-import styles from './item.module.scss'
+import styles from './product-detail.module.scss'
 
-export const Item = ({ title, price, picture_url }: ItemEntity) => {
+export const ProductDetail = ({ title, price, picture_url }: ItemEntity) => {
   return (
     <section className={styles.section}>
       <div className={styles.area}>
-        <div className={styles['grid-item']}>
+        <div className={styles['grid-product']}>
           {picture_url && (
             <picture className={styles.picture}>
               <Image

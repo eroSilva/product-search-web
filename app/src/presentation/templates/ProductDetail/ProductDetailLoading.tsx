@@ -1,10 +1,10 @@
-import styles from './item-loading.module.scss'
+import styles from './product-detail-loading.module.scss'
 
-export const ItemLoading = () => {
+export const ProductDetailLoading = () => {
   return (
     <section className={styles.section}>
       <div className={styles.area}>
-        <div className={styles.item}>
+        <div className={styles.product}>
           <div className={styles.image} />
           <div className={styles.infos}>
             <div className={styles['sold-quantity']} />

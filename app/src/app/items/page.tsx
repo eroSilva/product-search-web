@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import { Items } from '@/presentation/templates'
+import { ProductList } from '@/presentation/templates'
 import { getItems } from '@/application/services/itemService'
 
 interface ItemsProps {
@@ -8,12 +8,12 @@ interface ItemsProps {
   }
 }
 
-export default async function ItemsPage({ searchParams }: ItemsProps) {
+export default async function ProductListPage({ searchParams }: ItemsProps) {
   if (!searchParams?.search) {
     notFound()
   }
 
   const { query, items } = await getItems(searchParams?.search)
 
-  return <Items items={items} query={query} />
+  return <ProductList items={items} query={query} />
 }

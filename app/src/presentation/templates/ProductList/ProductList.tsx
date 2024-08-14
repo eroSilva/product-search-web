@@ -1,18 +1,18 @@
 import { ItemsEntity } from '@product-search-web/shared'
-import { Item } from '@/presentation/components'
-import styles from './items.module.scss'
+import { Product } from './Product'
+import styles from './product-list.module.scss'
 
-type ItemsProps = Pick<ItemsEntity, 'query' | 'items'>
+type ProductListProps = Pick<ItemsEntity, 'query' | 'items'>
 
-export const Items = ({ query, items }: ItemsProps) => {
+export const ProductList = ({ query, items }: ProductListProps) => {
   return (
     <section className={styles.section}>
       <div className={styles.area}>
         {items.length > 0 && (
           <ul>
             {items.map(item => (
-              <li className={styles.item} key={item.id}>
-                <Item
+              <li className={styles.product} key={item.id}>
+                <Product
                   title={item.title ?? undefined}
                   image={{
                     src: item.picture_url ?? undefined,

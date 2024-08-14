@@ -1,5 +1,5 @@
-import { ItemLoading } from '@/presentation/templates'
+import { ProductDetailLoading } from '@/presentation/templates'
 
 export default function Loading() {
-  return <ItemLoading />
+  return <ProductDetailLoading />
 }
