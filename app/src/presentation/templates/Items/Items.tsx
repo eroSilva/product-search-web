@@ -28,7 +28,6 @@ export const Items = ({ query, items }: ItemsProps) => {
             ))}
           </ul>
         )}
-
         {!items.length && (
           <p>Nenhum resultado encontrado para o termo: {query}</p>
         )}

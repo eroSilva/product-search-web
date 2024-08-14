@@ -1,17 +1,9 @@
-'use client'
-
-import Image from 'next/image'
 import { ItemEntity } from '@product-search-web/shared'
-import { useFallbackImage } from '@/application/controllers'
 import { currencyFormatter } from '@/utils'
-import { Button } from '@/presentation/components'
+import { Button, Image } from '@/presentation/components'
 import styles from './item.module.scss'
 
 export const Item = ({ title, price, picture_url }: ItemEntity) => {
-  const { imgSrc, handleImageFallback } = useFallbackImage(
-    picture_url || undefined,
-  )
-
   return (
     <section className={styles.section}>
       <div className={styles.area}>
@@ -19,11 +11,10 @@ export const Item = ({ title, price, picture_url }: ItemEntity) => {
           {picture_url && (
             <picture className={styles.picture}>
               <Image
-                src={imgSrc}
+                src={picture_url}
                 alt={title || ''}
                 width={680}
                 height={680}
-                onError={handleImageFallback}
               />
             </picture>
           )}

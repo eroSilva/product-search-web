@@ -1,9 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { useFallbackImage } from '@/application/controllers'
 import { currencyFormatter } from '@/utils'
+import { Image } from '@/presentation/components'
 import styles from './item.module.scss'
 
 interface ImageProps {
