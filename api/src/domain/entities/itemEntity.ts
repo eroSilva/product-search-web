@@ -18,6 +18,8 @@ interface CreateItems {
 }
 
 export const createItem = ({ item, category }: CreateItem): ItemEntity => {
+  const picture_url = item.pictures?.[0]?.url ?? item.thumbnail ?? null
+
   return {
     id: item.id || null,
     title: item.title || null,
@@ -28,7 +30,7 @@ export const createItem = ({ item, category }: CreateItem): ItemEntity => {
       amount: Math.trunc(item?.price || 0) || null,
       decimals: extractDecimalDigits(item?.price || 0) || null,
     },
-    picture_url: item.thumbnail || null,
+    picture_url,
     condition: item.condition || null,
     free_shipping: item.shipping?.free_shipping || null,
     seller: item.seller?.nickname || null,

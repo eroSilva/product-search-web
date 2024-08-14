@@ -125,6 +125,12 @@ interface PDPTracking {
   product_info: ProductInfo[]
 }
 
+interface Picture {
+  id: string
+  url: string
+  secure_url: string
+}
+
 export interface ItemRepository {
   id?: string
   site_id?: string
@@ -139,6 +145,7 @@ export interface ItemRepository {
   permalink?: string
   thumbnail?: string
   thumbnail_id?: string
+  pictures?: Picture[]
   domain_id?: string
   order_backend?: number
   sanitized_title?: string

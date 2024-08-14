@@ -22,7 +22,7 @@ export const itemEntityFixture: ItemEntity = {
   description: null,
   free_shipping: true,
   id: 'MLB3333537967',
-  picture_url: 'http://http2.mlstatic.com/D_896874-MLU74917793798_032024-I.jpg',
+  picture_url: 'http://http2.mlstatic.com/D_816900-MLU71266327515_082023-O.jpg',
   price: {
     amount: 187,
     currency: 'BRL',
