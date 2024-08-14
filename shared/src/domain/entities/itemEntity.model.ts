@@ -7,7 +7,7 @@ export interface Price {
 export interface ItemEntity {
   id?: string | null
   title?: string | null
-  category?: string | null
+  categories?: string[] | null
   price?: Price | null
   picture_url?: string | null
   condition?: string | null
