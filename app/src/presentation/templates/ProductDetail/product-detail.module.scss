@@ -34,6 +34,9 @@
   img {
     max-width: 100%;
     height: auto;
+    width: 680px;
+    object-fit: contain;
+    aspect-ratio: 1 / 1;
   }
 }
 

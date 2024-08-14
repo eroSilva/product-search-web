@@ -12,7 +12,14 @@
 
 .picture {
   border-radius: $size-4;
-  border: convert-px-to-rem(1px, $base-font-size) solid $neutral-tertiary-color;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    width: 180px;
+    object-fit: contain;
+    aspect-ratio: 1 / 1;
+  }
 }
 
 .infos {

@@ -30,13 +30,14 @@ export const Product = ({
   return (
     <div className={styles.wrapper}>
       {image && image.src && (
-        <Image
-          src={image.src}
-          alt={image.alt || ''}
-          width={180}
-          height={180}
-          className={styles.picture}
-        />
+        <picture className={styles.picture}>
+          <Image
+            src={image.src}
+            alt={image.alt || ''}
+            width={180}
+            height={180}
+          />
+        </picture>
       )}
       <div className={styles['infos']}>
         <div>
