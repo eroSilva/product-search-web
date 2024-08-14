@@ -16,7 +16,10 @@
   "scripts": {
     "dev:api": "npm run dev -w api",
     "dev:app": "npm run dev -w app",
-    "dev": "concurrently \"npm run dev:api\" \"npm run dev:app\""
+    "start:api": "npm run start -w api",
+    "start:app": "npm run build -w app && npm run start -w app",
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:app\"",
+    "start": "concurrently \"npm run start:api\" \"npm run start:app\""
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
