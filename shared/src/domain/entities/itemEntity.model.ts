@@ -21,6 +21,7 @@ export interface ItemEntity {
   description?: string | null
   seller?: string | null
   attributes?: Attribute[] | null
+  permalink?: string | null
 }
 
 export interface ItemsEntity {

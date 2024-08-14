@@ -29,25 +29,26 @@ const createAttributes = (attributes: ItemRepository['attributes']) => {
 }
 
 const createPictureUrl = (item: ItemRepository) => {
-  return item.pictures?.[0]?.url || item.thumbnail || null
+  return item.pictures?.[0]?.url ?? item.thumbnail ?? null
 }
 
 export const createItem = ({ item, category }: CreateItem): ItemEntity => {
   return {
-    id: item.id || null,
-    title: item.title || null,
-    categories: createCategoryPathFromRoot(category) || [],
-    description: item.descriptions?.join(' ') || null,
+    id: item.id ?? null,
+    title: item.title ?? null,
+    categories: createCategoryPathFromRoot(category) ?? [],
+    description: item.descriptions?.join(' ') ?? null,
     price: {
       currency: item.currency_id || null,
       amount: Math.trunc(item?.price || 0) || null,
       decimals: extractDecimalDigits(item?.price || 0) || null,
     },
     picture_url: createPictureUrl(item),
-    condition: item.condition || null,
-    free_shipping: item.shipping?.free_shipping || null,
-    seller: item.seller?.nickname || null,
-    attributes: createAttributes(item.attributes) || [],
+    condition: item.condition ?? null,
+    free_shipping: !!item.shipping?.free_shipping,
+    seller: item.seller?.nickname ?? null,
+    attributes: createAttributes(item.attributes) ?? [],
+    permalink: item.permalink ?? null,
   }
 }
 
@@ -59,8 +60,8 @@ export const createItems = ({ items, category }: CreateItems): ItemsEntity => {
   const categories = createCategoryPathFromRoot(category)
 
   return {
-    query: query || '',
+    query: query ?? '',
     categories,
-    items: parsedItems || [],
+    items: parsedItems ?? [],
   }
 }

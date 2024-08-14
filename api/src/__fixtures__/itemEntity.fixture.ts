@@ -4,7 +4,7 @@ export const itemEntityNullableFixture: ItemEntity = {
   categories: [],
   condition: null,
   description: null,
-  free_shipping: null,
+  free_shipping: false,
   id: null,
   picture_url: null,
   price: {
@@ -15,6 +15,7 @@ export const itemEntityNullableFixture: ItemEntity = {
   title: null,
   seller: null,
   attributes: [],
+  permalink: null,
 }
 
 export const itemEntityFixture: ItemEntity = {
@@ -42,6 +43,7 @@ export const itemEntityFixture: ItemEntity = {
       value: 'Branco',
     },
   ],
+  permalink: 'https://www.mercadolivre.com.br',
 }
 
 export const itemsEntityEmptyFixture: ItemsEntity = {
@@ -80,12 +82,13 @@ export const itemsEntityFixture: ItemsEntity = {
           value: 'Branco',
         },
       ],
+      permalink: 'https://www.mercadolivre.com.br',
     },
     {
       categories: ['Celulares e Telefones', 'Celulares e Smartphones'],
       condition: 'new',
       description: null,
-      free_shipping: null,
+      free_shipping: false,
       id: 'MLB3370852551',
       picture_url:
         'http://http2.mlstatic.com/D_966289-MLB53287968748_012023-I.jpg',
@@ -106,6 +109,7 @@ export const itemsEntityFixture: ItemsEntity = {
           value: 'Branco',
         },
       ],
+      permalink: 'https://www.mercadolivre.com.br',
     },
   ],
 }

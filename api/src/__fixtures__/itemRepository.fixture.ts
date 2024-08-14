@@ -10,8 +10,7 @@ export const itemRepositoryFixture: ItemRepository = {
   listing_type_id: 'gold_special',
   sanitized_title:
     'modulo-taramps-ts400x4-400w-2-ohms-rca-ts-400x4-4-canais-100w-amplificador-400rms-t400-4-canais-potencia-taramps-som-para-carro-moto-caminhonete-automotivo',
-  permalink:
-    'https://www.mercadolivre.com.br/modulo-taramps-ts400x4-400w-2-ohms-rca-ts-400x4-4-canais-100w-amplificador-400rms-t400-4-canais-potencia-taramps-som-para-carro-moto-caminhonete-automotivo/p/MLB21941637',
+  permalink: 'https://www.mercadolivre.com.br',
   buying_mode: 'buy_it_now',
   site_id: 'MLB',
   category_id: 'SOME_CATEGORY_ID',
@@ -154,8 +153,7 @@ export const itemsRepositoryFixture: ItemsRepository = {
       listing_type_id: 'gold_special',
       sanitized_title:
         'modulo-taramps-ts400x4-400w-2-ohms-rca-ts-400x4-4-canais-100w-amplificador-400rms-t400-4-canais-potencia-taramps-som-para-carro-moto-caminhonete-automotivo',
-      permalink:
-        'https://www.mercadolivre.com.br/modulo-taramps-ts400x4-400w-2-ohms-rca-ts-400x4-4-canais-100w-amplificador-400rms-t400-4-canais-potencia-taramps-som-para-carro-moto-caminhonete-automotivo/p/MLB21941637',
+      permalink: 'https://www.mercadolivre.com.br',
       buying_mode: 'buy_it_now',
       site_id: 'MLB',
       category_id: 'SOME_CATEGORY_ID',
@@ -272,8 +270,7 @@ export const itemsRepositoryFixture: ItemsRepository = {
       listing_type_id: 'gold_pro',
       sanitized_title:
         'bomba-de-ar-pedal-alta-presso-pneu-moto-bicicleta-colcho',
-      permalink:
-        'https://www.mercadolivre.com.br/bomba-de-ar-pedal-alta-presso-pneu-moto-bicicleta-colcho/p/MLB22330024',
+      permalink: 'https://www.mercadolivre.com.br',
       buying_mode: 'buy_it_now',
       site_id: 'MLB',
       category_id: 'SOME_CATEGORY_ID',
