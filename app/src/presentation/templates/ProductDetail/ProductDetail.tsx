@@ -1,6 +1,7 @@
+import Link from 'next/link'
 import { ItemEntity } from '@product-search-web/shared'
 import { currencyFormatter } from '@/utils'
-import { Button, Image, Breadcrumbs } from '@/presentation/components'
+import { Image, Breadcrumbs, ButtonAnchor } from '@/presentation/components'
 import styles from './product-detail.module.scss'
 
 export const ProductDetail = ({
@@ -8,6 +9,7 @@ export const ProductDetail = ({
   price,
   categories,
   picture_url,
+  permalink,
 }: ItemEntity) => {
   return (
     <>
@@ -38,9 +40,13 @@ export const ProductDetail = ({
                   })}
                 </p>
               )}
-              <Button size="large" isFull>
-                Comprar
-              </Button>
+              {permalink && (
+                <Link href={permalink} passHref legacyBehavior>
+                  <ButtonAnchor size="large" isFull>
+                    Comprar
+                  </ButtonAnchor>
+                </Link>
+              )}
             </div>
             <div className={styles.description}>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed
