@@ -1,7 +1,7 @@
 import { ItemEntity, ItemsEntity } from '@product-search-web/shared'
 
 export const itemEntityNullableFixture: ItemEntity = {
-  category: null,
+  categories: [],
   condition: null,
   description: null,
   free_shipping: null,
@@ -17,7 +17,7 @@ export const itemEntityNullableFixture: ItemEntity = {
 }
 
 export const itemEntityFixture: ItemEntity = {
-  category: 'MLB3385',
+  categories: ['Celulares e Telefones', 'Celulares e Smartphones'],
   condition: 'new',
   description: null,
   free_shipping: true,
@@ -41,10 +41,10 @@ export const itemsEntityEmptyFixture: ItemsEntity = {
 
 export const itemsEntityFixture: ItemsEntity = {
   query: 'Moto',
-  categories: ['MLB3385', 'MLB429490'],
+  categories: ['Celulares e Telefones', 'Celulares e Smartphones'],
   items: [
     {
-      category: 'MLB3385',
+      categories: ['Celulares e Telefones', 'Celulares e Smartphones'],
       condition: 'new',
       description: null,
       free_shipping: true,
@@ -61,7 +61,7 @@ export const itemsEntityFixture: ItemsEntity = {
       seller: 'JAQUIM SHOP',
     },
     {
-      category: 'MLB429490',
+      categories: ['Celulares e Telefones', 'Celulares e Smartphones'],
       condition: 'new',
       description: null,
       free_shipping: null,

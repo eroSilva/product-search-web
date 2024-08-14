@@ -7,26 +7,35 @@ import {
   itemEntityNullableFixture,
   itemEntityFixture,
   itemsEntityFixture,
+  categoryRepositoryFixture,
 } from '../../../__fixtures__'
 
 describe('domain/entities/itemEntity', () => {
   it('should create an nullable entity when no itemRepository is provided', () => {
-    expect(createItem({})).toStrictEqual(itemEntityNullableFixture)
+    expect(createItem({ item: {} })).toStrictEqual(itemEntityNullableFixture)
   })
 
   it('should create a entity when itemRepository is provided', () => {
-    expect(createItem(itemRepositoryFixture)).toStrictEqual(itemEntityFixture)
+    expect(
+      createItem({
+        item: itemRepositoryFixture,
+        category: categoryRepositoryFixture,
+      }),
+    ).toStrictEqual(itemEntityFixture)
   })
 
   it('should create an list of entity when itemsRepository is provided', () => {
-    expect(createItems([] as ItemsRepository)).toStrictEqual(
+    expect(createItems({ items: [] as ItemsRepository })).toStrictEqual(
       itemsEntityEmptyFixture,
     )
   })
 
   it('should create an list of entity when itemsRepository is provided', () => {
-    expect(createItems(itemsRepositoryFixture)).toStrictEqual(
-      itemsEntityFixture,
-    )
+    expect(
+      createItems({
+        items: itemsRepositoryFixture,
+        category: categoryRepositoryFixture,
+      }),
+    ).toStrictEqual(itemsEntityFixture)
   })
 })

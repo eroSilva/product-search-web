@@ -14,7 +14,7 @@ export const itemRepositoryFixture: ItemRepository = {
     'https://www.mercadolivre.com.br/modulo-taramps-ts400x4-400w-2-ohms-rca-ts-400x4-4-canais-100w-amplificador-400rms-t400-4-canais-potencia-taramps-som-para-carro-moto-caminhonete-automotivo/p/MLB21941637',
   buying_mode: 'buy_it_now',
   site_id: 'MLB',
-  category_id: 'MLB3385',
+  category_id: 'SOME_CATEGORY_ID',
   domain_id: 'MLB-VEHICLE_AMPLIFIERS',
   thumbnail: 'http://http2.mlstatic.com/D_896874-MLU74917793798_032024-I.jpg',
   currency_id: 'BRL',
@@ -320,7 +320,7 @@ export const itemsRepositoryFixture: ItemsRepository = {
         'https://www.mercadolivre.com.br/modulo-taramps-ts400x4-400w-2-ohms-rca-ts-400x4-4-canais-100w-amplificador-400rms-t400-4-canais-potencia-taramps-som-para-carro-moto-caminhonete-automotivo/p/MLB21941637',
       buying_mode: 'buy_it_now',
       site_id: 'MLB',
-      category_id: 'MLB3385',
+      category_id: 'SOME_CATEGORY_ID',
       domain_id: 'MLB-VEHICLE_AMPLIFIERS',
       thumbnail:
         'http://http2.mlstatic.com/D_896874-MLU74917793798_032024-I.jpg',
@@ -438,7 +438,7 @@ export const itemsRepositoryFixture: ItemsRepository = {
         'https://www.mercadolivre.com.br/bomba-de-ar-pedal-alta-presso-pneu-moto-bicicleta-colcho/p/MLB22330024',
       buying_mode: 'buy_it_now',
       site_id: 'MLB',
-      category_id: 'MLB429490',
+      category_id: 'SOME_CATEGORY_ID',
       domain_id: 'MLB-MANUAL_AND_FOOT_AIR_PUMPS',
       thumbnail:
         'http://http2.mlstatic.com/D_966289-MLB53287968748_012023-I.jpg',

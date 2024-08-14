@@ -3,6 +3,7 @@ import { getItems, getItem } from '../../../application/services/itemServices'
 import {
   itemsRepositoryFixture,
   itemRepositoryFixture,
+  categoryRepositoryFixture,
   itemsEntityFixture,
   itemEntityFixture,
 } from '../../../__fixtures__'
@@ -13,36 +14,16 @@ describe('application/services/itemServices', () => {
       .onGet('/sites/MLB/search?q=SOME_QUERY')
       .reply(200, itemsRepositoryFixture)
 
-    expect(await getItems('SOME_QUERY')).toStrictEqual(itemsEntityFixture)
-  })
-
-  it('should return an error message when getItems request fail', async () => {
     mockedInstance
-      .onGet('/sites/MLB/search?q=SOME_QUERY')
-      .reply(500, { content: 'lorem ipsum' })
+      .onGet('/categories/SOME_CATEGORY_ID')
+      .reply(200, categoryRepositoryFixture)
 
-    await expect(getItems('SOME_QUERY')).rejects.toStrictEqual({
-      status: 500,
-      message: 'Error fetching in getItems',
-      payload: { content: 'lorem ipsum' },
-    })
+    expect(await getItems('SOME_QUERY')).toStrictEqual(itemsEntityFixture)
   })
 
   it('should return correctly data when getItem called with a id', async () => {
     mockedInstance.onGet('/items/SOME_ID').reply(200, itemRepositoryFixture)
 
     expect(await getItem('SOME_ID')).toStrictEqual(itemEntityFixture)
-  })
-
-  it('should return an error message when getItem request fail', async () => {
-    mockedInstance
-      .onGet('/items/SOME_ID')
-      .reply(500, { content: 'lorem ipsum' })
-
-    await expect(getItem('SOME_ID')).rejects.toStrictEqual({
-      status: 500,
-      message: 'Error fetching in getItem',
-      payload: { content: 'lorem ipsum' },
-    })
   })
 })

@@ -1,33 +1,50 @@
 import { ItemEntity, ItemsEntity } from '@product-search-web/shared'
-import { ItemsRepository, ItemRepository } from '@/domain'
+import {
+  ItemsRepository,
+  ItemRepository,
+  CategoryRepository,
+  createCategoryPathFromRoot,
+} from '@/domain'
 import { extractDecimalDigits } from '@/utils'
 
-export const createItem = (itemsRepository: ItemRepository): ItemEntity => {
+interface CreateItem {
+  item: ItemRepository
+  category?: CategoryRepository
+}
+
+interface CreateItems {
+  items: ItemsRepository
+  category?: CategoryRepository
+}
+
+export const createItem = ({ item, category }: CreateItem): ItemEntity => {
   return {
-    id: itemsRepository.id || null,
-    title: itemsRepository.title || null,
-    category: itemsRepository.category_id || null,
-    description: itemsRepository.descriptions?.join(' ') || null,
+    id: item.id || null,
+    title: item.title || null,
+    categories: createCategoryPathFromRoot(category) || [],
+    description: item.descriptions?.join(' ') || null,
     price: {
-      currency: itemsRepository.currency_id || null,
-      amount: Math.trunc(itemsRepository?.price || 0) || null,
-      decimals: extractDecimalDigits(itemsRepository?.price || 0) || null,
+      currency: item.currency_id || null,
+      amount: Math.trunc(item?.price || 0) || null,
+      decimals: extractDecimalDigits(item?.price || 0) || null,
     },
-    picture_url: itemsRepository.thumbnail || null,
-    condition: itemsRepository.condition || null,
-    free_shipping: itemsRepository.shipping?.free_shipping || null,
-    seller: itemsRepository.seller?.nickname || null,
+    picture_url: item.thumbnail || null,
+    condition: item.condition || null,
+    free_shipping: item.shipping?.free_shipping || null,
+    seller: item.seller?.nickname || null,
   }
 }
 
-export const createItems = (itemsRepository: ItemsRepository): ItemsEntity => {
-  const { results, query } = itemsRepository
-  const categories = results?.map(({ category_id }) => category_id || '')
-  const items = results?.map(createItem)
+export const createItems = ({ items, category }: CreateItems): ItemsEntity => {
+  const { results, query } = items
+  const parsedItems = results?.map(result =>
+    createItem({ item: result, category }),
+  )
+  const categories = createCategoryPathFromRoot(category)
 
   return {
     query: query || '',
-    categories: categories || [],
-    items: items || [],
+    categories,
+    items: parsedItems || [],
   }
 }

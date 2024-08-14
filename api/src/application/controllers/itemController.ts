@@ -1,6 +1,9 @@
 import express, { Request, Response, Application } from 'express'
 import { getItems, getItem } from '@/application/services'
-import { isCustomErrorInstance } from '@/infrastructure'
+import {
+  isServiceErrorInstance,
+  createServiceErrorObject,
+} from '@/infrastructure'
 
 const app: Application = express()
 
@@ -17,8 +20,10 @@ export const itemsRouter = app.get(
       const data = await getItems(String(query))
       res.json(data)
     } catch (error) {
-      if (isCustomErrorInstance(error)) {
-        return res.status(error?.status).send(error)
+      if (isServiceErrorInstance(error)) {
+        return res
+          .status(error.response?.status ?? 500)
+          .send(createServiceErrorObject(error))
       }
 
       res.status(500).send('An unexpected error occurred')
@@ -35,8 +40,10 @@ export const itemRouter = app.get(
       const data = await getItem(id)
       res.json(data)
     } catch (error) {
-      if (isCustomErrorInstance(error)) {
-        return res.status(error?.status).send(error)
+      if (isServiceErrorInstance(error)) {
+        return res
+          .status(error.response?.status ?? 500)
+          .send(createServiceErrorObject(error))
       }
 
       res.status(500).send('An unexpected error occurred')
