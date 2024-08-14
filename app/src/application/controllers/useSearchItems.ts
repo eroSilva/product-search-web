@@ -1,8 +1,10 @@
+import { useTransition } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 
 export const useSearchItems = () => {
   const router = useRouter()
   const searchParams = useSearchParams()
+  const [isSearching, startTransition] = useTransition()
   const search = searchParams.get('search') || ''
 
   const handleSearchSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -13,9 +15,11 @@ export const useSearchItems = () => {
     const search = formData.get('search') as string
 
     if (search) {
-      router.push(`/items?search=${search}`)
+      startTransition(() => {
+        router.push(`/items?search=${search}`)
+      })
     }
   }
 
-  return { handleSearchSubmit, search }
+  return { handleSearchSubmit, isSearching, search }
 }

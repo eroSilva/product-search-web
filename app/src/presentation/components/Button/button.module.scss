@@ -1,6 +1,7 @@
 @import '@/presentation/core/variables.module.scss';
 
 .root {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -12,17 +13,33 @@
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+
+  &[aria-busy='true'] {
+    cursor: progress;
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 
 .primary {
   background-color: $secondary-color;
   color: white;
 
-  &:hover {
+  &:not([aria-busy='true']):hover {
     background-color: darken($secondary-color, 10%);
   }
 
-  &:active {
+  &:not([aria-busy='true']):active {
+    background-color: darken($secondary-color, 15%);
+  }
+
+  &[aria-busy='true']::before {
     background-color: darken($secondary-color, 15%);
   }
 }
@@ -31,12 +48,16 @@
   background-color: $neutral-tertiary-color;
   color: $neutral-primary-color;
 
-  &:hover {
+  &:not([aria-busy='true']):hover {
     background-color: darken($neutral-tertiary-color, 10%);
   }
 
-  &:active {
+  &:not([aria-busy='true']):active {
     background-color: darken($neutral-tertiary-color, 15%);
+  }
+
+  &[aria-busy='true']::before {
+    background-color: rgba(darken($neutral-tertiary-color, 15%), 0.5);
   }
 }
 
