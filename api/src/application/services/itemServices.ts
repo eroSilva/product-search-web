@@ -12,11 +12,13 @@ import { getCategory } from '@/application/services'
 
 export const getItems = async (query: string): Promise<ItemsEntity> => {
   const items = await getData<ItemsRepository>(`/sites/MLB/search?q=${query}`)
+
   const categoryId = extractCategoryId(items)
+  if (!categoryId) return createItems({ items })
+
   const category = await getData<CategoryRepository>(
     `/categories/${categoryId}`,
   )
-
   return createItems({ items, category })
 }
 

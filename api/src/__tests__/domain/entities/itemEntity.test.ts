@@ -1,5 +1,4 @@
 import { createItem, createItems } from '../../../domain/entities'
-import { ItemsRepository } from '../../../domain/repositories'
 import {
   itemRepositoryFixture,
   itemsRepositoryFixture,
@@ -25,7 +24,7 @@ describe('domain/entities/itemEntity', () => {
   })
 
   it('should create an list of entity when itemsRepository is provided', () => {
-    expect(createItems({ items: [] as ItemsRepository })).toStrictEqual(
+    expect(createItems({ items: { query: 'SOME_QUERY' } })).toStrictEqual(
       itemsEntityEmptyFixture,
     )
   })

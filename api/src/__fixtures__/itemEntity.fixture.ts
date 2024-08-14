@@ -34,7 +34,7 @@ export const itemEntityFixture: ItemEntity = {
 }
 
 export const itemsEntityEmptyFixture: ItemsEntity = {
-  query: '',
+  query: 'SOME_QUERY',
   categories: [],
   items: [],
 }

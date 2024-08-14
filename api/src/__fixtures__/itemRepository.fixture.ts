@@ -609,3 +609,37 @@ export const itemsRepositoryFixture: ItemsRepository = {
   },
   user_context: null,
 }
+
+export const itemsRepositoryEmptyFixture: ItemsRepository = {
+  site_id: 'MLB',
+  country_default_time_zone: 'GMT-03:00',
+  query: 'SOME_QUERY',
+  paging: {
+    total: 0,
+    primary_results: 0,
+    offset: 0,
+    limit: 50,
+  },
+  results: [],
+  sort: {
+    id: 'relevance',
+    name: 'Mais relevantes',
+  },
+  available_sorts: [
+    {
+      id: 'price_asc',
+      name: 'Menor preço',
+    },
+    {
+      id: 'price_desc',
+      name: 'Maior preço',
+    },
+  ],
+  filters: [],
+  available_filters: [],
+  pdp_tracking: {
+    group: false,
+    product_info: [],
+  },
+  user_context: null,
+}
