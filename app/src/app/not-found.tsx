@@ -1,5 +1,5 @@
-import { NotFound } from '@/presentation/templates'
+import { Error } from '@/presentation/templates'
 
 export default function NotFoundPage() {
-  return <NotFound />
+  return <Error title="Ops! Página não encontrada..." emoji="😶‍🌫️" />
 }

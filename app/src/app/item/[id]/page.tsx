@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation'
 import { ProductDetail } from '@/presentation/templates'
 import { getItem } from '@/application/services/itemService'
 
@@ -8,7 +9,16 @@ interface ItemProps {
 }
 
 export default async function ItemPage({ params }: ItemProps) {
-  const data = await getItem(params?.id)
+  const itemResponse = await getItem(params?.id)
+  const isResponseInstance = itemResponse instanceof Response
 
-  return <ProductDetail {...data} />
+  if (!isResponseInstance) {
+    return <ProductDetail {...itemResponse} />
+  }
+
+  if (itemResponse.status === 404) {
+    return notFound()
+  }
+
+  throw new Error('Internal server error')
 }

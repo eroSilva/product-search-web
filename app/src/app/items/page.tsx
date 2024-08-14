@@ -9,11 +9,16 @@ interface ItemsProps {
 }
 
 export default async function ProductListPage({ searchParams }: ItemsProps) {
-  if (!searchParams?.search) {
-    notFound()
+  const itemsResponse = await getItems(searchParams?.search)
+  const isResponseInstance = itemsResponse instanceof Response
+
+  if (!isResponseInstance) {
+    return <ProductList {...itemsResponse} />
   }
 
-  const data = await getItems(searchParams?.search)
+  if (itemsResponse.status === 404) {
+    return notFound()
+  }
 
-  return <ProductList {...data} />
+  throw new Error('Internal server error')
 }
