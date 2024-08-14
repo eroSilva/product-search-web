@@ -1,7 +1,7 @@
 import { ItemEntity, ItemsEntity } from '@product-search-web/shared'
 
 export const getItem = async (id: string): Promise<ItemEntity> => {
-  const res = await fetch(`http://localhost:8000/api/item/${id}`)
+  const res = await fetch(`${process.env.API_ENDPOINT}/item/${id}`)
 
   if (!res.ok) {
     throw new Error('Failed to fetch data')
@@ -11,7 +11,7 @@ export const getItem = async (id: string): Promise<ItemEntity> => {
 }
 
 export const getItems = async (term: string): Promise<ItemsEntity> => {
-  const res = await fetch(`http://localhost:8000/api/items?search=${term}`)
+  const res = await fetch(`${process.env.API_ENDPOINT}/items?search=${term}`)
 
   if (!res.ok) {
     throw new Error('Failed to fetch data')

@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation'
 import { Items } from '@/presentation/templates'
 import { getItems } from '@/application/services/itemService'
 
@@ -8,7 +9,11 @@ interface ItemsProps {
 }
 
 export default async function ItemsPage({ searchParams }: ItemsProps) {
-  const { items } = await getItems(searchParams?.search)
+  if (!searchParams?.search) {
+    notFound()
+  }
 
-  return <Items items={items} />
+  const { query, items } = await getItems(searchParams?.search)
+
+  return <Items items={items} query={query} />
 }
