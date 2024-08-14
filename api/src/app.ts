@@ -6,7 +6,7 @@ import { itemsRouter, itemRouter } from '@/application/controllers'
 const app: Application = express()
 const port = process.env.PORT || 8000
 const corsOptions = {
-  origin: ['http://localhost:3000'],
+  origin: ['http://localhost:3001'],
 }
 
 app.use(cors(corsOptions))
