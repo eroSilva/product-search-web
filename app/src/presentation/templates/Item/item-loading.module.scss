@@ -1,0 +1,100 @@
+@import '@/presentation/core/functions.module.scss';
+@import '@/presentation/core/variables.module.scss';
+@import '@/presentation/core/layout.module.scss';
+
+.section {
+  @extend .container;
+  @extend .grid;
+
+  grid-template-areas: '#{repeat-term('product-list', 4)}';
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-areas: '. #{repeat-term('product-list', 10)} .';
+  }
+}
+
+.area {
+  grid-area: product-list;
+  background-color: $neutral-light;
+  border-radius: $size-4;
+  padding: $size-16;
+  margin-top: $size-16;
+}
+
+.item {
+  @extend .grid;
+
+  padding: $size-16;
+  gap: $size-16;
+  grid-template-areas:
+    '#{repeat-term('picture', 4)}'
+    '#{repeat-term('infos', 4)}'
+    '#{repeat-term('description', 4)}';
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-areas:
+      '#{repeat-term('picture', 6)} #{repeat-term('infos', 4)}'
+      '#{repeat-term('description', 10)}';
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    grid-template-areas:
+      '#{repeat-term('picture', 7)} #{repeat-term('infos', 3)}'
+      '#{repeat-term('description', 7)} . . .';
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid lighten($neutral-tertiary-color, 5%);
+  }
+}
+
+.image {
+  @extend .suspense;
+
+  grid-area: picture;
+  max-width: convert-px-to-rem(640px, $base-font-size);
+  height: convert-px-to-rem(640px, $base-font-size);
+}
+
+.infos {
+  grid-area: infos;
+}
+
+.sold-quantity {
+  @extend .suspense;
+
+  max-width: convert-px-to-rem(180px, $base-font-size);
+  height: convert-px-to-rem(24px, $base-font-size);
+  margin-top: $size-16;
+}
+
+.title {
+  @extend .suspense;
+
+  max-width: convert-px-to-rem(320px, $base-font-size);
+  height: convert-px-to-rem(34px, $base-font-size);
+  margin-top: $size-12;
+}
+
+.price {
+  @extend .suspense;
+
+  max-width: convert-px-to-rem(180px, $base-font-size);
+  height: convert-px-to-rem(48px, $base-font-size);
+  margin: $size-32 0;
+}
+
+.button {
+  @extend .suspense;
+
+  height: convert-px-to-rem(64px, $base-font-size);
+}
+
+.description {
+  @extend .suspense;
+
+  grid-area: description;
+  height: convert-px-to-rem(24px, $base-font-size);
+  margin-top: $size-32;
+}

@@ -1,0 +1,70 @@
+@import '@/presentation/core/functions.module.scss';
+@import '@/presentation/core/variables.module.scss';
+@import '@/presentation/core/layout.module.scss';
+
+.section {
+  @extend .container;
+  @extend .grid;
+
+  grid-template-areas: '#{repeat-term('product-list', 4)}';
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-areas: '. #{repeat-term('product-list', 10)} .';
+  }
+}
+
+.area {
+  grid-area: product-list;
+  background-color: $neutral-light;
+  border-radius: $size-4;
+  padding: $size-16;
+  margin-top: $size-16;
+}
+
+.item {
+  padding: $size-16;
+  gap: $size-16;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid lighten($neutral-tertiary-color, 5%);
+  }
+
+  @media (min-width: $breakpoint-md) {
+    display: flex;
+  }
+}
+
+.image {
+  @extend .suspense;
+
+  max-width: convert-px-to-rem(180px, $base-font-size);
+  height: convert-px-to-rem(180px, $base-font-size);
+}
+
+.infos {
+  width: 100%;
+}
+
+.price {
+  @extend .suspense;
+
+  max-width: convert-px-to-rem(180px, $base-font-size);
+  height: convert-px-to-rem(24px, $base-font-size);
+  margin-top: $size-24;
+}
+
+.title {
+  @extend .suspense;
+
+  max-width: convert-px-to-rem(240px, $base-font-size);
+  height: convert-px-to-rem(24px, $base-font-size);
+  margin-top: $size-12;
+}
+
+.description {
+  @extend .suspense;
+
+  max-width: convert-px-to-rem(120px, $base-font-size);
+  height: convert-px-to-rem(24px, $base-font-size);
+  margin-top: $size-32;
+}

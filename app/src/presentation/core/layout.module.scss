@@ -17,3 +17,18 @@
     grid-template-columns: repeat($grid-columns-md, 1fr);
   }
 }
+
+.suspense {
+  width: 100%;
+  border-radius: $size-4;
+  animation: loading 1s infinite alternate;
+}
+
+@keyframes loading {
+  0% {
+    background-color: $neutral-tertiary-color;
+  }
+  100% {
+    background-color: lighten($neutral-tertiary-color, 5%);
+  }
+}
