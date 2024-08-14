@@ -11,7 +11,7 @@
 .grid {
   width: 100%;
   display: grid;
-  gap: $grid-gap;
+  column-gap: $grid-gap;
   grid-template-columns: repeat($grid-columns, 1fr);
 
   @media (min-width: $breakpoint-md) {
@@ -29,11 +29,19 @@
   @extend .container;
   @extend .grid;
 
-  grid-template-areas: '#{repeat-term('content-area', 4)}';
+  grid-template-areas:
+    '#{repeat-term('breadcrumbs-area', 4)}'
+    '#{repeat-term('content-area', 4)}';
 
   @media (min-width: $breakpoint-md) {
-    grid-template-areas: '. #{repeat-term('content-area', 10)} .';
+    grid-template-areas:
+      '. #{repeat-term('breadcrumbs-area', 10)} .'
+      '. #{repeat-term('content-area', 10)} .';
   }
+}
+
+.breadcrumbs-area {
+  grid-area: breadcrumbs-area;
 }
 
 .content-area {

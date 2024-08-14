@@ -13,7 +13,7 @@ export default async function ProductListPage({ searchParams }: ItemsProps) {
     notFound()
   }
 
-  const { query, items } = await getItems(searchParams?.search)
+  const data = await getItems(searchParams?.search)
 
-  return <ProductList items={items} query={query} />
+  return <ProductList {...data} />
 }

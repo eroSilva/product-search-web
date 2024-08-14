@@ -1,0 +1,32 @@
+@import '@/presentation/core/variables.module.scss';
+
+.wrapper {
+  margin-top: $size-16;
+  font-size: $size-14;
+  line-height: $size-18;
+  color: $neutral-secondary-color;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  &:not(:last-of-type) {
+    &:after {
+      content: '>';
+      display: inline-block;
+      margin: 0 $size-10;
+    }
+  }
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    color: $secondary-color;
+  }
+}

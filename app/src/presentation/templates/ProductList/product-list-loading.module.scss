@@ -2,6 +2,14 @@
 @import '@/presentation/core/variables.module.scss';
 @import '@/presentation/core/layout.module.scss';
 
+.breadcrumbs {
+  @extend .suspense;
+
+  max-width: convert-px-to-rem(380px, $base-font-size);
+  height: convert-px-to-rem(24px, $base-font-size);
+  margin-top: $size-16;
+}
+
 .product {
   padding: $size-16;
   gap: $size-16;
