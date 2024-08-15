@@ -11,6 +11,7 @@ const config: Config = {
   collectCoverage: true,
   collectCoverageFrom: ['./src/**'],
   setupFilesAfterEnv: ['<rootDir>/tests/setupAfterEnv.ts'],
+  setupFiles: ['<rootDir>/tests/__mocks__/next-navigation.ts'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
   },
