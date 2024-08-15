@@ -1,5 +1,4 @@
 import Link from 'next/link'
-
 import styles from './breadcrumbs.module.scss'
 
 interface BreadcrumbsProps {
@@ -8,7 +7,7 @@ interface BreadcrumbsProps {
 
 export const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
   return (
-    <nav aria-label="Breadcrumb" className={styles.wrapper}>
+    <nav aria-label="Breadcrumbs" className={styles.wrapper}>
       <ol className={styles.list}>
         {items?.map((item, index) => (
           <li key={`breadcrumbs-item-${index}`} className={styles.item}>
