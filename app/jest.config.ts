@@ -11,6 +11,9 @@ const config: Config = {
   collectCoverage: true,
   collectCoverageFrom: ['./src/**'],
   setupFilesAfterEnv: ['<rootDir>/tests/setupAfterEnv.ts'],
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+  },
   coverageThreshold: {
     global: {
       branches: 80,
