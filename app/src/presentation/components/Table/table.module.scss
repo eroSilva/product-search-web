@@ -1,0 +1,28 @@
+@import '@/presentation/core/variables.module.scss';
+
+.table {
+  // border: 1px solid $neutral-tertiary-color;
+  width: 100%;
+  text-align: left;
+
+  th {
+    font-size: $size-18;
+    font-weight: 500;
+  }
+
+  th,
+  td {
+    padding: $size-14 $size-12;
+  }
+
+  tr {
+    td {
+      font-size: $size-14;
+      line-height: $size-18;
+    }
+
+    &:nth-of-type(odd) > td {
+      background-color: rgba($neutral-tertiary-color, 0.5);
+    }
+  }
+}

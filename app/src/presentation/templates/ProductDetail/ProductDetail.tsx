@@ -1,7 +1,12 @@
 import Link from 'next/link'
 import { ItemEntity } from '@product-search-web/shared'
 import { currencyFormatter } from '@/utils'
-import { Image, Breadcrumbs, ButtonAnchor } from '@/presentation/components'
+import {
+  Image,
+  Breadcrumbs,
+  ButtonAnchor,
+  Table,
+} from '@/presentation/components'
 import styles from './product-detail.module.scss'
 
 export const ProductDetail = ({
@@ -10,6 +15,7 @@ export const ProductDetail = ({
   categories,
   picture_url,
   permalink,
+  attributes,
 }: ItemEntity) => {
   return (
     <>
@@ -49,10 +55,12 @@ export const ProductDetail = ({
               )}
             </div>
             <div className={styles.description}>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed
-              debitis voluptates magnam possimus? Hic, alias fuga, placeat
-              eligendi magnam velit error quibusdam sint recusandae impedit
-              dolor nostrum quas amet ea.
+              {attributes && (
+                <Table
+                  heading={[{ name: 'Atributo', value: 'Valor' }]}
+                  data={attributes}
+                />
+              )}
             </div>
           </div>
         </div>
