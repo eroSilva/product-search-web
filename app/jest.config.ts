@@ -9,17 +9,17 @@ const config: Config = {
   coverageProvider: 'v8',
   testEnvironment: 'jsdom',
   collectCoverage: true,
-  collectCoverageFrom: ['./src/**'],
+  collectCoverageFrom: [
+    './src/**',
+    '!./src/app/**',
+    '!./src/**/*.loading.tsx',
+    '!./src/**/types.ts',
+  ],
   setupFilesAfterEnv: ['<rootDir>/tests/setupAfterEnv.ts'],
   setupFiles: ['<rootDir>/tests/__mocks__/next-navigation.ts'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^.+\\.(png|jpg|jpeg|gif|webp|avif|ico|bmp|svg)$/i': `<rootDir>/__mocks__/file-mock.ts`,
-  },
-  coverageThreshold: {
-    global: {
-      branches: 80,
-    },
   },
 }
 

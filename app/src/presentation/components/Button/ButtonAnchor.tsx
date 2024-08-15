@@ -27,3 +27,5 @@ export const ButtonAnchor = forwardRef<HTMLAnchorElement, ButtonAnchorProps>(
     )
   },
 )
+
+ButtonAnchor.displayName = 'ButtonAnchor'

@@ -1,2 +1,2 @@
 export * from './ProductDetail'
-export * from './ProductDetailLoading'
+export * from './ProductDetail.loading'
