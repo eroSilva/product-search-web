@@ -22,6 +22,12 @@ Estruturamos a aplicação utilizando [npm workspaces](https://docs.npmjs.com/cl
 
 ### 📄 API
 
+![Branches](./api/docs/badges/coverage-branches.svg)
+![Functions](./api/docs/badges/coverage-functions.svg)
+![Lines](./api/docs/badges/coverage-lines.svg)
+![Statements](./api/docs/badges/coverage-statements.svg)
+![Jest coverage](./api/docs/badges/coverage-jest%20coverage.svg)
+
 Camada intermediária entre o front-end e a API original. Aqui, utilizamos o express para construção dos endpoints e optamos por uma arquitetura próxima aos padrões do Clean Architecture.
 
 ```
@@ -44,6 +50,12 @@ Para criar o setup inicial, utilizamos a ferramenta de linha de comando [express
 Nos testes, estamos utilizando Jest com [Supertest](https://www.npmjs.com/package/supertest) para criar os mocks do express, e o [axios-mock-adapter](https://www.npmjs.com/package/axios-mock-adapter) para os mocks do axios.
 
 ### 📱 APP
+
+![Branches](./app/docs/badges/coverage-branches.svg)
+![Functions](./app/docs/badges/coverage-functions.svg)
+![Lines](./app/docs/badges/coverage-lines.svg)
+![Statements](./app/docs/badges/coverage-statements.svg)
+![Jest coverage](./app/docs/badges/coverage-jest%20coverage.svg)
 
 Nessa camada, utilizamos o Next.js para construção da interface e todo controle de rotas. Escolhemos este framework por conta dos seus recursos de Server Side Rendering avançado e de fácil utilização/configuração. Aqui, nos inspiramos no Clean Architecture também para isolar algumas responsabilidades.
 
