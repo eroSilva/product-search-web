@@ -1,5 +1,5 @@
-import { mockedInstance } from '../../../infrastructure/ApiServiceMockAdapter'
-import { getItems, getItem } from '../../../application/services/itemServices'
+import { mockedInstance } from '@/infrastructure/ApiServiceMockAdapter'
+import { getItems, getItem } from '@/application/services/itemServices'
 import {
   categoryRepositoryFixture,
   itemEntityFixture,
@@ -8,7 +8,7 @@ import {
   itemsEntityFixture,
   itemsRepositoryEmptyFixture,
   itemsRepositoryFixture,
-} from '../../../__fixtures__'
+} from '@/__fixtures__'
 
 describe('application/services/itemServices', () => {
   it('should return correctly data when getItems called with a query', async () => {

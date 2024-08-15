@@ -1,4 +1,4 @@
-import { createItem, createItems } from '../../../domain/entities'
+import { createItem, createItems } from '@/domain'
 import {
   itemRepositoryFixture,
   itemsRepositoryFixture,
@@ -7,7 +7,7 @@ import {
   itemEntityFixture,
   itemsEntityFixture,
   categoryRepositoryFixture,
-} from '../../../__fixtures__'
+} from '@/__fixtures__'
 
 describe('domain/entities/itemEntity', () => {
   it('should create an nullable entity when no itemRepository is provided', () => {

@@ -1,15 +1,15 @@
 import request from 'supertest'
-import { mockedInstance } from '../../../infrastructure/ApiServiceMockAdapter'
+import { mockedInstance } from '@/infrastructure/ApiServiceMockAdapter'
 import {
   itemsEntityFixture,
   itemsRepositoryFixture,
   itemRepositoryFixture,
   itemEntityFixture,
   categoryRepositoryFixture,
-} from '../../../__fixtures__'
+} from '@/__fixtures__'
 
 describe('application/controllers/itemController', () => {
-  const app = require('../../../app')
+  const app = require('@/app')
 
   it('should return HTTP status 400 with a simple message when search param is not provided', async () => {
     await request(app)

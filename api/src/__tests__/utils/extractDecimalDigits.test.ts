@@ -1,4 +1,4 @@
-import { extractDecimalDigits } from '../../utils/extractDecimalDigits'
+import { extractDecimalDigits } from '@/utils/extractDecimalDigits'
 
 describe('utils/extractDecimalDigits', () => {
   it('should return decimals when a float value is provided', () => {
