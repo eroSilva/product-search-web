@@ -20,9 +20,12 @@
     "start:app": "npm run build -w app && npm run start -w app",
     "test:api": "npm run test -w api",
     "test:app": "npm run test -w app",
+    "test:api:ci": "npm run test:ci -w api",
+    "test:app:ci": "npm run test:ci -w app",
     "dev": "concurrently \"npm run dev:api\" \"npm run dev:app\"",
     "start": "concurrently \"npm run start:api\" \"npm run start:app\"",
-    "test": "concurrently \"npm run test:api\" \"npm run test:app\""
+    "test": "concurrently \"npm run test:api\" \"npm run test:app\"",
+    "test:ci": "concurrently \"npm run test:api:ci\" \"npm run test:app:ci\""
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
