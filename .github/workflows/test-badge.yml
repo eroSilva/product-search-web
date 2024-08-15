@@ -1,5 +1,8 @@
 name: Test Badge generate
 on: [push]
+permissions:
+  contents: write
+
 jobs:
   generate:
     runs-on: ubuntu-latest
@@ -10,11 +13,22 @@ jobs:
       - name: Install
         run: npm install
 
-      - name: Tests
+      - name: (APP) Test
         run: npm run test:app:ci
 
-      - name: Generating coverage badges
+      - name: (APP) Generating coverage badges
         uses: jpb06/jest-badges-action@latest
         with:
           branches: main
           coverage-summary-path: ./app/coverage/coverage-summary.json
+          output-folder: ./app/coverage/badges
+
+      - name: (API) Test
+        run: npm run test:api:ci
+
+      - name: (API) Generating coverage badges
+        uses: jpb06/jest-badges-action@latest
+        with:
+          branches: main
+          coverage-summary-path: ./api/coverage/coverage-summary.json
+          output-folder: ./api/coverage/badges
