@@ -57,10 +57,7 @@ export const ProductDetail = ({
             </div>
             <div className={styles.attributes}>
               {attributes && (
-                <Table
-                  heading={[{ name: 'Atributo', value: 'Valor' }]}
-                  data={attributes}
-                />
+                <Table heading={['Atributo', 'Valor']} data={attributes} />
               )}
             </div>
           </div>

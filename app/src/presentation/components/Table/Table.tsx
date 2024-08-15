@@ -6,7 +6,7 @@ interface CellProps {
 }
 
 interface TableProps {
-  heading: CellProps[]
+  heading: string[]
   data: CellProps[]
 }
 
@@ -14,12 +14,9 @@ export const Table = ({ heading, data }: TableProps) => {
   return (
     <table className={styles.table}>
       <thead>
-        {heading?.map(({ name, value }, index) => (
-          <tr key={`tr-th-${index}`}>
-            <th>{name ?? '-'}</th>
-            <th>{value ?? '-'}</th>
-          </tr>
-        ))}
+        <tr>
+          {heading?.map((value, index) => <th key={`th-${index}`}>{value}</th>)}
+        </tr>
       </thead>
       <tbody>
         {data?.map(({ name, value }, index) => (

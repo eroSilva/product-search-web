@@ -14,6 +14,7 @@ const config: Config = {
   setupFiles: ['<rootDir>/tests/__mocks__/next-navigation.ts'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
+    '^.+\\.(png|jpg|jpeg|gif|webp|avif|ico|bmp|svg)$/i': `<rootDir>/__mocks__/file-mock.ts`,
   },
   coverageThreshold: {
     global: {
