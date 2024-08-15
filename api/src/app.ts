@@ -4,9 +4,9 @@ import cors from 'cors'
 import { itemsRouter, itemRouter } from '@/application/controllers'
 
 const app: Application = express()
-const port = process.env.PORT || 8000
+const port = process.env.PORT || 3001
 const corsOptions = {
-  origin: ['http://localhost:3001'],
+  origin: ['http://localhost:3000'],
 }
 
 app.use(cors(corsOptions))
