@@ -10,6 +10,7 @@ export const Home = ({ title, description }: HomeProps) => {
     <section className={styles.section}>
       <h1 className={styles.title}>{title}</h1>
       <p className={styles.description}>{description}</p>
+      <p className={styles.emoji}>🥸</p>
     </section>
   )
 }

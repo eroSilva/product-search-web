@@ -32,6 +32,7 @@ export const ProductDetail = ({
                   alt={title || ''}
                   width={680}
                   height={680}
+                  priority
                 />
               </picture>
             )}
