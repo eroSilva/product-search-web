@@ -17,7 +17,7 @@ export interface ItemEntity {
   picture_url?: string | null
   condition?: string | null
   free_shipping?: boolean | null
-  sold_qty?: number | null
+  available_quantity?: number | null
   description?: string | null
   seller?: string | null
   attributes?: Attribute[] | null

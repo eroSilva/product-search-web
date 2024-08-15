@@ -52,14 +52,12 @@ describe('presentation/templates/ProductList', () => {
     render(<ProductList {...productListData} />)
 
     expect(screen.getByLabelText('Breadcrumbs')).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: categories[0] })).toHaveAttribute(
-      'href',
-      `/items?search=${categories[0]}`,
-    )
-    expect(screen.getByRole('link', { name: categories[1] })).toHaveAttribute(
-      'href',
-      `/items?search=${categories[1]}`,
-    )
+    categories.forEach(category => {
+      expect(screen.getByRole('link', { name: category })).toHaveAttribute(
+        'href',
+        `/items?search=${category}`,
+      )
+    })
   })
 
   it('should renders correctly images', () => {
@@ -72,6 +70,16 @@ describe('presentation/templates/ProductList', () => {
         expect.stringContaining(picture_url.replace('/', '')),
       )
     })
+  })
+
+  it('should renders correctly free shipping icon', () => {
+    render(<ProductList {...productListData} />)
+
+    expect(
+      screen.getByAltText(
+        'Ícone de um caminhão, dentro de um circulo verde, para representar o frete grátis',
+      ),
+    ).toBeInTheDocument()
   })
 
   it('should renders correctly texts', () => {

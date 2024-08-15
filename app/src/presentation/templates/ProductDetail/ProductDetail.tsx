@@ -16,6 +16,8 @@ export const ProductDetail = ({
   picture_url,
   permalink,
   attributes,
+  condition,
+  available_quantity,
 }: ItemEntity) => {
   return (
     <>
@@ -37,7 +39,12 @@ export const ProductDetail = ({
               </picture>
             )}
             <div className={styles.infos}>
-              <p className={styles['sold-quantity']}>Nuevo - 24 vendidos</p>
+              <p className={styles['sold-quantity']}>
+                {condition === 'new' && 'Novo'}
+                {condition === 'used' && 'Usado'}
+                {condition && available_quantity && ' - '}
+                {available_quantity && `${available_quantity} disponíveis`}
+              </p>
               <h1 className={styles.title}>{title}</h1>
               {price?.currency && price?.amount && (
                 <p className={styles.price}>

@@ -9,7 +9,7 @@ const productDetailData = {
   price: { currency: 'BRL', amount: 400, decimals: null },
   picture_url: '/test-file-stub',
   condition: 'new',
-  free_shipping: true,
+  available_quantity: 100,
   seller: null,
   attributes: [
     { name: 'Tipos de ajuste', value: 'Cadarços' },
@@ -32,14 +32,12 @@ describe('presentation/templates/ProductDetail', () => {
     render(<ProductDetail {...productDetailData} />)
 
     expect(screen.getByLabelText('Breadcrumbs')).toBeInTheDocument()
-    expect(screen.getByRole('link', { name: categories[0] })).toHaveAttribute(
-      'href',
-      `/items?search=${categories[0]}`,
-    )
-    expect(screen.getByRole('link', { name: categories[1] })).toHaveAttribute(
-      'href',
-      `/items?search=${categories[1]}`,
-    )
+    categories.forEach(category => {
+      expect(screen.getByRole('link', { name: category })).toHaveAttribute(
+        'href',
+        `/items?search=${category}`,
+      )
+    })
   })
 
   it('should renders correctly image', () => {
@@ -53,10 +51,12 @@ describe('presentation/templates/ProductDetail', () => {
   })
 
   it('should renders correctly texts', () => {
-    const { title, price } = productDetailData
+    const { title, price, available_quantity } = productDetailData
     render(<ProductDetail {...productDetailData} />)
 
-    expect(screen.getByText('Nuevo - 24 vendidos')).toBeInTheDocument()
+    expect(
+      screen.getByText(`Novo - ${available_quantity} disponíveis`),
+    ).toBeInTheDocument()
     expect(screen.getByText(`R$ ${price.amount}`)).toBeInTheDocument()
     expect(
       screen.getByRole('heading', { name: title, level: 1 }),
