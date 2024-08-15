@@ -49,6 +49,7 @@ export const createItem = ({ item, category }: CreateItem): ItemEntity => {
     seller: item.seller?.nickname ?? null,
     attributes: createAttributes(item.attributes) ?? [],
     permalink: item.permalink ?? null,
+    available_quantity: item.available_quantity ?? null,
   }
 }
 

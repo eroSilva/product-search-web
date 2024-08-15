@@ -16,6 +16,7 @@ export const itemEntityNullableFixture: ItemEntity = {
   seller: null,
   attributes: [],
   permalink: null,
+  available_quantity: null,
 }
 
 export const itemEntityFixture: ItemEntity = {
@@ -44,6 +45,7 @@ export const itemEntityFixture: ItemEntity = {
     },
   ],
   permalink: 'https://www.mercadolivre.com.br',
+  available_quantity: 5000,
 }
 
 export const itemsEntityEmptyFixture: ItemsEntity = {
@@ -83,6 +85,7 @@ export const itemsEntityFixture: ItemsEntity = {
         },
       ],
       permalink: 'https://www.mercadolivre.com.br',
+      available_quantity: 5000,
     },
     {
       categories: ['Celulares e Telefones', 'Celulares e Smartphones'],
@@ -110,6 +113,7 @@ export const itemsEntityFixture: ItemsEntity = {
         },
       ],
       permalink: 'https://www.mercadolivre.com.br',
+      available_quantity: 500,
     },
   ],
 }
