@@ -21,7 +21,7 @@ jobs:
         with:
           branches: main
           coverage-summary-path: ./app/coverage/coverage-summary.json
-          output-folder: ./app/coverage/badges
+          output-folder: ./app/docs/badges
 
       - name: (API) Test
         run: npm run test:api:ci
@@ -31,4 +31,4 @@ jobs:
         with:
           branches: main
           coverage-summary-path: ./api/coverage/coverage-summary.json
-          output-folder: ./api/coverage/badges
+          output-folder: ./api/docs/badges
