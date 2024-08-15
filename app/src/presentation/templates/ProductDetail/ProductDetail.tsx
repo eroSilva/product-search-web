@@ -32,6 +32,7 @@ export const ProductDetail = ({
                   alt={title || ''}
                   width={680}
                   height={680}
+                  priority
                 />
               </picture>
             )}
@@ -54,7 +55,7 @@ export const ProductDetail = ({
                 </Link>
               )}
             </div>
-            <div className={styles.description}>
+            <div className={styles.attributes}>
               {attributes && (
                 <Table
                   heading={[{ name: 'Atributo', value: 'Valor' }]}

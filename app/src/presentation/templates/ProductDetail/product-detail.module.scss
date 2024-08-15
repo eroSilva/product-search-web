@@ -8,20 +8,20 @@
   grid-template-areas:
     '#{repeat-term('picture', 4)}'
     '#{repeat-term('infos', 4)}'
-    '#{repeat-term('description', 4)}';
+    '#{repeat-term('attributes', 4)}';
 
   @media (min-width: $breakpoint-md) {
     padding: $size-16;
     grid-template-columns: repeat(10, 1fr);
     grid-template-areas:
       '#{repeat-term('picture', 6)} #{repeat-term('infos', 4)}'
-      '#{repeat-term('description', 10)}';
+      '#{repeat-term('attributes', 10)}';
   }
 
   @media (min-width: $breakpoint-xl) {
     grid-template-areas:
       '#{repeat-term('picture', 7)} #{repeat-term('infos', 3)}'
-      '#{repeat-term('description', 7)} . . .';
+      '#{repeat-term('attributes', 7)} . . .';
   }
 }
 
@@ -81,6 +81,11 @@
   }
 }
 
-.description {
-  grid-area: description;
+.attributes {
+  grid-area: attributes;
+  margin-top: $size-24;
+
+  @media (min-width: $breakpoint-md) {
+    margin-top: 0;
+  }
 }

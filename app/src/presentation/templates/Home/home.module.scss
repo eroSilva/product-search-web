@@ -32,3 +32,9 @@
     line-height: $size-22;
   }
 }
+
+.emoji {
+  display: block;
+  font-size: convert-px-to-rem(180px, $base-font-size);
+  margin: $size-32 0;
+}
