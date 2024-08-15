@@ -11,10 +11,10 @@ jobs:
         run: npm install
 
       - name: Tests
-        run: npm run test:api:ci
+        run: npm run test:app:ci
 
       - name: Generating coverage badges
         uses: jpb06/jest-badges-action@latest
         with:
           branches: main
-          coverage-summary-path: ./api/coverage/coverage-summary.json
+          coverage-summary-path: ./app/coverage/coverage-summary.json
