@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { ProductDetail } from '@/presentation/templates'
-import { getItem } from '@/application/services/itemService'
+import { getItem } from '@/application/services'
 
 interface ItemProps {
   params: {
