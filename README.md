@@ -14,11 +14,11 @@ Esta aplicação web é composta por três componentes principais que trabalham 
 
 Os dados utilizados para cada um dos componentes acima foi obtido da [API pública do Mercado Livre](https://developers.mercadolivre.com.br/pt_br/itens-e-buscas).
 
-_Obs.: Alguns detalhes das especificações foram adaptados para melhorar o resultado_
+_Obs.: Algumas adaptações foram feitas para melhorar o resultado final_
 
 ## 🏗️ Estrutura do Projeto
 
-Estruturamos a aplicação utilizando [npm workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces) para orquestrar os 3 módulos principais:
+Estruturamos a aplicação utilizando [npm workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces) para orquestrar os 3 módulos principais: API, APP e Shared.
 
 ### 📄 API
 
@@ -47,7 +47,7 @@ Camada intermediária entre o front-end e a API original. Aqui, utilizamos o exp
 
 Para criar o setup inicial, utilizamos a ferramenta de linha de comando [express-generator](https://expressjs.com/en/starter/generator.html).
 
-Nos testes, estamos utilizando Jest com [Supertest](https://www.npmjs.com/package/supertest) para criar os mocks do express, e o [axios-mock-adapter](https://www.npmjs.com/package/axios-mock-adapter) para os mocks do axios.
+Nos testes, utilizamos o Jest com [Supertest](https://www.npmjs.com/package/supertest) para criar os mocks do express, e o [axios-mock-adapter](https://www.npmjs.com/package/axios-mock-adapter) para os mocks do axios.
 
 ### 📱 APP
 
@@ -57,7 +57,7 @@ Nos testes, estamos utilizando Jest com [Supertest](https://www.npmjs.com/packag
 ![Statements](./app/docs/badges/coverage-statements.svg)
 ![Jest coverage](./app/docs/badges/coverage-jest%20coverage.svg)
 
-Nessa camada, utilizamos o Next.js para construção da interface e todo controle de rotas. Escolhemos este framework por conta dos seus recursos de Server Side Rendering avançado e de fácil utilização/configuração. Aqui, nos inspiramos no Clean Architecture também para isolar algumas responsabilidades.
+Nessa camada, utilizamos o Next.js para construção da interface e todo controle de rotas. Escolhemos este framework por conta dos seus recursos de Server Side Rendering avançados. Aqui, também nos inspiramos no Clean Architecture para isolar algumas responsabilidades.
 
 ```
 /app                    # [App Router do Next]
@@ -86,11 +86,11 @@ Nessa camada, utilizamos o Next.js para construção da interface e todo control
 
 Para criar o setup inicial, utilizamos a ferramenta de linha de comando [create-next-app](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
-Nos testes, estamos utilizando Jest com [@testing-library/react](https://testing-library.com/) e [jest-axe](https://www.npmjs.com/package/jest-axe) (ferramenta de testes de acessibilidade).
+Nos testes, utilizamos Jest com [@testing-library/react](https://testing-library.com/) e [jest-axe](https://www.npmjs.com/package/jest-axe) (ferramenta de testes de acessibilidade).
 
 ## 🤲 Shared
 
-Módulo separado com recursos utilizados pelos outros dois módulos. O único recurso compartilhado até o momento foram as interfaces de um Item.
+Este módulo foi separado com recursos utilizados pelos outros dois módulos.
 
 ## 📚 Instruções para Execução
 
@@ -123,7 +123,7 @@ Módulo separado com recursos utilizados pelos outros dois módulos. O único re
 
    A aplicação ficará disponível em `http://localhost:3000`
 
-5. **Rodando os testes**:
+5. **Rode os testes unitários**:
 
    ```bash
    npm run test
@@ -131,7 +131,7 @@ Módulo separado com recursos utilizados pelos outros dois módulos. O único re
 
    Os dois módulos serão testados em seguência
 
-_Obs.: Os comandos de dev, start e test podem ser executados de forma individual para cada aplicação, basta adicionar o nome do seu diretório logo em seguida do comando_
+_Obs.: Os comandos de dev, start e test podem ser executados de forma individual para cada aplicação. Basta adicionar o nome do seu diretório logo em seguida do comando_
 
 ```bash
 npm run test:app
